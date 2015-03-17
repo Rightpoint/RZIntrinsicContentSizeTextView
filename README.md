@@ -25,4 +25,3 @@ Derek Ostrander, djostran@gmail.com
 ## License
 
 RZIntrinsicContentSizeTextView is available under the MIT license. See the LICENSE file for more info.
-
