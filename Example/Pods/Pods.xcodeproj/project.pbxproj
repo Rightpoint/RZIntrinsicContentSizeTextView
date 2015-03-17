@@ -1,0 +1,1022 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02BEAC989AB22ADEDD9CCF3E /* UIView+RZAutoLayoutReplacementHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = E02532442083AF7F30E7E897 /* UIView+RZAutoLayoutReplacementHelpers.h */; };
+		046BAFEA2EFF1ED9D470F817 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC31399D41BD03884F667FF /* Foundation.framework */; };
+		14306C66CED81756F5C36568 /* UIView+RZBorders.h in Headers */ = {isa = PBXBuildFile; fileRef = DE6C444D5393E5AAB746F2FC /* UIView+RZBorders.h */; };
+		16D1B2F3434C4B11528773E2 /* RZIntrinsicContentSizeTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = F62DA2136936FF0A700BE26C /* RZIntrinsicContentSizeTextView.h */; };
+		184E1BE1E1E54D7786F2CEE0 /* UIView+RZAutoLayoutReplacementHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D9168BD6F51B432CCE6ED /* UIView+RZAutoLayoutReplacementHelpers.m */; };
+		2F3ED4DB3CFB7555E0F90767 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB2317325091BBE9049679 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-dummy.m */; };
+		341DCE752F02D3BA9ABE18D6 /* UIView+RZAutoLayoutHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = C32ACAD3A71901FD4565049D /* UIView+RZAutoLayoutHelpers.h */; };
+		39D596DB0FBE251C1BF9F6E8 /* UIView+RZFrameUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4951A064D7BD631DD557D /* UIView+RZFrameUtils.m */; };
+		3B08DB0F424CB508999C9776 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC31399D41BD03884F667FF /* Foundation.framework */; };
+		3C5F0C6E0B0899EE09F9E067 /* Pods-Tests-RZIntrinsicContentSizeTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F42358DCF12FDD39856EA462 /* Pods-Tests-RZIntrinsicContentSizeTextView-dummy.m */; };
+		43BA6C75556EED39C47C0752 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAEECE5F328F2B6E7F1CE61 /* UIKit.framework */; };
+		5970B70FEBBE7A384F7817FC /* UIView+RZAutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6610A202896CE5F1C08097 /* UIView+RZAutoLayoutHelpers.m */; };
+		5F4401EC05327A36042D1C4D /* UIView+RZAutoLayoutReplacementHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = E02532442083AF7F30E7E897 /* UIView+RZAutoLayoutReplacementHelpers.h */; };
+		662F179AF4C1256A645678B8 /* UIView+RZFrameUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4951A064D7BD631DD557D /* UIView+RZFrameUtils.m */; };
+		6A1907D060D403787AE1674C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAEECE5F328F2B6E7F1CE61 /* UIKit.framework */; };
+		6C980E505193D67F28917168 /* RZIntrinsicContentSizeTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = F62DA2136936FF0A700BE26C /* RZIntrinsicContentSizeTextView.h */; };
+		6F0954682563705104E4CA22 /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A5BB5445AD3C7F6ED8B84 /* Pods-Tests-dummy.m */; };
+		71BFD469E811C1D9862F748C /* UIView+RZAutoLayoutPriorityHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF14B2BF8F7EA822B3B857 /* UIView+RZAutoLayoutPriorityHelpers.m */; };
+		733C032A641B61CC5DA10993 /* Pods-RZIntrinsicContentSizeTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6C0E8281DA5D4B65DADC08 /* Pods-RZIntrinsicContentSizeTextView-dummy.m */; };
+		81FCDA94AF4B0894C9FB4953 /* UIView+RZAutoLayoutPriorityHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF14B2BF8F7EA822B3B857 /* UIView+RZAutoLayoutPriorityHelpers.m */; };
+		8B428F9CACDC61EAB7AB5D37 /* Pods-Tests-RZUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E6A5CBF65768583861286 /* Pods-Tests-RZUtils-dummy.m */; };
+		8D1548FC4AA27993EBE35915 /* UIView+RZAutoLayoutPriorityHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 814CADAC75E2F896E1F34C22 /* UIView+RZAutoLayoutPriorityHelpers.h */; };
+		9074E35A6410A5B92D7E6710 /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F71B54F6D4103FA166AE7 /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-dummy.m */; };
+		95C3FF7D7542AC84854AF5BE /* UIView+RZAutoLayoutReplacementHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D9168BD6F51B432CCE6ED /* UIView+RZAutoLayoutReplacementHelpers.m */; };
+		97CC226CEE2380BCA8A5FEDA /* UIView+RZAutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6610A202896CE5F1C08097 /* UIView+RZAutoLayoutHelpers.m */; };
+		98EFAD142D66181B3623F301 /* UIView+RZBorders.m in Sources */ = {isa = PBXBuildFile; fileRef = 4613BDF6178C8058FF842189 /* UIView+RZBorders.m */; };
+		A7D9A3B497B71B725B35B46B /* UIView+RZFrameUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 395103BA06A1BE3661888AE9 /* UIView+RZFrameUtils.h */; };
+		B67D6E2CAB7510A9CAC657F9 /* UIView+RZAutoLayoutPriorityHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 814CADAC75E2F896E1F34C22 /* UIView+RZAutoLayoutPriorityHelpers.h */; };
+		BFF1134FC6ACF42B814B5922 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC31399D41BD03884F667FF /* Foundation.framework */; };
+		C24A8AACF933405FE23657FC /* UIView+RZBorders.m in Sources */ = {isa = PBXBuildFile; fileRef = 4613BDF6178C8058FF842189 /* UIView+RZBorders.m */; };
+		C2EEE2051AB872E800848A44 /* UIView+RZAutoLayoutPriorityHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF14B2BF8F7EA822B3B857 /* UIView+RZAutoLayoutPriorityHelpers.m */; };
+		C2EEE20A1AB8769D00848A44 /* RZIntrinsicContentSizeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0923F37329136A7ACF0BCCCC /* RZIntrinsicContentSizeTextView.m */; };
+		C83E39DCE9DAEDD64EA7F59A /* RZIntrinsicContentSizeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0923F37329136A7ACF0BCCCC /* RZIntrinsicContentSizeTextView.m */; };
+		D06A2CB300B99A7BE73E0280 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC31399D41BD03884F667FF /* Foundation.framework */; };
+		DB8EA5D75DA5A49861E0D5ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC31399D41BD03884F667FF /* Foundation.framework */; };
+		F0B36BA937892C97685C8A73 /* UIView+RZBorders.h in Headers */ = {isa = PBXBuildFile; fileRef = DE6C444D5393E5AAB746F2FC /* UIView+RZBorders.h */; };
+		F7BD58F2C07A695678F0065D /* UIView+RZFrameUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 395103BA06A1BE3661888AE9 /* UIView+RZFrameUtils.h */; };
+		F9A2D97F015B69A1A7B842A0 /* UIView+RZAutoLayoutHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = C32ACAD3A71901FD4565049D /* UIView+RZAutoLayoutHelpers.h */; };
+		FA6635858679E4AC099D0F33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC31399D41BD03884F667FF /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03C7DDE8A622C90277403E2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7846677EB726285948D6925F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 019636733D6978BF8DFD3D22;
+			remoteInfo = "Pods-Tests-RZUtils";
+		};
+		056C6B05A7C4B2F89710E0B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7846677EB726285948D6925F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7168A99797F3B00E2A053DF8;
+			remoteInfo = "Pods-RZIntrinsicContentSizeTextView-RZUtils";
+		};
+		1DA862C499BA3416B6EF4D71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7846677EB726285948D6925F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19532F4AC37FBFD1B64FA678;
+			remoteInfo = "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView";
+		};
+		623E01D75139C9A391300404 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7846677EB726285948D6925F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7168A99797F3B00E2A053DF8;
+			remoteInfo = "Pods-RZIntrinsicContentSizeTextView-RZUtils";
+		};
+		6E2AF16D6E86B6E13FBF7E41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7846677EB726285948D6925F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3241643346D3CDAF6565846;
+			remoteInfo = "Pods-Tests-RZIntrinsicContentSizeTextView";
+		};
+		FB106D70809081B95C5EB93B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7846677EB726285948D6925F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 019636733D6978BF8DFD3D22;
+			remoteInfo = "Pods-Tests-RZUtils";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0923F37329136A7ACF0BCCCC /* RZIntrinsicContentSizeTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RZIntrinsicContentSizeTextView.m; sourceTree = "<group>"; };
+		1557BE17135B58BAC4557F1F /* Pods-Tests-RZIntrinsicContentSizeTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-RZIntrinsicContentSizeTextView.xcconfig"; path = "../Pods-Tests-RZIntrinsicContentSizeTextView/Pods-Tests-RZIntrinsicContentSizeTextView.xcconfig"; sourceTree = "<group>"; };
+		1DF4CE28B57E0A18279E2BF3 /* Pods-RZIntrinsicContentSizeTextView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RZIntrinsicContentSizeTextView-resources.sh"; sourceTree = "<group>"; };
+		272928053578F7D97660BE42 /* libPods-Tests-RZIntrinsicContentSizeTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-RZIntrinsicContentSizeTextView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		282AD180BBE44EB2D6F715B5 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RZIntrinsicContentSizeTextView-RZUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		2AAEECE5F328F2B6E7F1CE61 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		30C97E81774E85A6F1B27B57 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		32EF14B2BF8F7EA822B3B857 /* UIView+RZAutoLayoutPriorityHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+RZAutoLayoutPriorityHelpers.m"; sourceTree = "<group>"; };
+		395103BA06A1BE3661888AE9 /* UIView+RZFrameUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+RZFrameUtils.h"; path = "RZUtils/Categories/UIView/UIView+RZFrameUtils.h"; sourceTree = "<group>"; };
+		3AB4951A064D7BD631DD557D /* UIView+RZFrameUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+RZFrameUtils.m"; path = "RZUtils/Categories/UIView/UIView+RZFrameUtils.m"; sourceTree = "<group>"; };
+		40FB2317325091BBE9049679 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RZIntrinsicContentSizeTextView-RZUtils-dummy.m"; sourceTree = "<group>"; };
+		4613BDF6178C8058FF842189 /* UIView+RZBorders.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+RZBorders.m"; path = "RZUtils/Categories/UIView/UIView+RZBorders.m"; sourceTree = "<group>"; };
+		4A0967162DDB36C6DE7F5B1B /* libPods-RZIntrinsicContentSizeTextView-RZUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RZIntrinsicContentSizeTextView-RZUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6610A202896CE5F1C08097 /* UIView+RZAutoLayoutHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+RZAutoLayoutHelpers.m"; path = "RZUtils/Categories/UIView/UIView+RZAutoLayoutHelpers.m"; sourceTree = "<group>"; };
+		4C1E6A5CBF65768583861286 /* Pods-Tests-RZUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Tests-RZUtils-dummy.m"; path = "../Pods-Tests-RZUtils/Pods-Tests-RZUtils-dummy.m"; sourceTree = "<group>"; };
+		4D3D0531E803611C533A05D2 /* Pods-RZIntrinsicContentSizeTextView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RZIntrinsicContentSizeTextView-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4D5DD07CC0C4B9728A8FFC1A /* Pods-RZIntrinsicContentSizeTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RZIntrinsicContentSizeTextView.debug.xcconfig"; sourceTree = "<group>"; };
+		4D8104EBC502CEF22AB7C6C7 /* Pods-RZIntrinsicContentSizeTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RZIntrinsicContentSizeTextView.release.xcconfig"; sourceTree = "<group>"; };
+		4F4F71B54F6D4103FA166AE7 /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-dummy.m"; sourceTree = "<group>"; };
+		5DC31399D41BD03884F667FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5F75F3056976F1A29F49AA46 /* libPods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B1E422AEA52F774B60C910 /* libPods-Tests-RZUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-RZUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		655B6F1170A41BDDB2BDEEFA /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		6978C8054462C3AC09791F04 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C52946961F508356648AFF0 /* Pods-Tests-RZUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-Tests-RZUtils-prefix.pch"; path = "../Pods-Tests-RZUtils/Pods-Tests-RZUtils-prefix.pch"; sourceTree = "<group>"; };
+		6E9B5EF8B9DA81BADF0B6C2A /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		738674BF12E9C8D9AADDD036 /* libPods-RZIntrinsicContentSizeTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RZIntrinsicContentSizeTextView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7754A92D8A4E5E459F00E95C /* Pods-Tests-RZUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-RZUtils.xcconfig"; path = "../Pods-Tests-RZUtils/Pods-Tests-RZUtils.xcconfig"; sourceTree = "<group>"; };
+		7F0A5BB5445AD3C7F6ED8B84 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
+		807B613992B665A2B226D952 /* Pods-RZIntrinsicContentSizeTextView-RZUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RZIntrinsicContentSizeTextView-RZUtils.xcconfig"; sourceTree = "<group>"; };
+		814CADAC75E2F896E1F34C22 /* UIView+RZAutoLayoutPriorityHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+RZAutoLayoutPriorityHelpers.h"; sourceTree = "<group>"; };
+		9D9D9168BD6F51B432CCE6ED /* UIView+RZAutoLayoutReplacementHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+RZAutoLayoutReplacementHelpers.m"; sourceTree = "<group>"; };
+		ADE74D87A5F017BDA0DDE1AA /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView.xcconfig"; sourceTree = "<group>"; };
+		B7B370387EBB8FF31C59C533 /* Pods-Tests-RZUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-RZUtils-Private.xcconfig"; path = "../Pods-Tests-RZUtils/Pods-Tests-RZUtils-Private.xcconfig"; sourceTree = "<group>"; };
+		BE4AE63A2847E0A635950AEE /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-Private.xcconfig"; sourceTree = "<group>"; };
+		C32ACAD3A71901FD4565049D /* UIView+RZAutoLayoutHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+RZAutoLayoutHelpers.h"; path = "RZUtils/Categories/UIView/UIView+RZAutoLayoutHelpers.h"; sourceTree = "<group>"; };
+		C7E277F69AC106C4999ED1CE /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-prefix.pch"; sourceTree = "<group>"; };
+		CA749FE5A6DA88BCEB736E0D /* Pods-Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-environment.h"; sourceTree = "<group>"; };
+		CA7DDCE68C4088652EA0164B /* Pods-RZIntrinsicContentSizeTextView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RZIntrinsicContentSizeTextView-acknowledgements.plist"; sourceTree = "<group>"; };
+		D6820A329518C2E026342FF7 /* Pods-Tests-RZIntrinsicContentSizeTextView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-RZIntrinsicContentSizeTextView-Private.xcconfig"; path = "../Pods-Tests-RZIntrinsicContentSizeTextView/Pods-Tests-RZIntrinsicContentSizeTextView-Private.xcconfig"; sourceTree = "<group>"; };
+		DD55CCD47EA1F1DFA50F147B /* Pods-RZIntrinsicContentSizeTextView-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RZIntrinsicContentSizeTextView-environment.h"; sourceTree = "<group>"; };
+		DE6C444D5393E5AAB746F2FC /* UIView+RZBorders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+RZBorders.h"; path = "RZUtils/Categories/UIView/UIView+RZBorders.h"; sourceTree = "<group>"; };
+		DE9622F98D77CEF2EAB713A7 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E02532442083AF7F30E7E897 /* UIView+RZAutoLayoutReplacementHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+RZAutoLayoutReplacementHelpers.h"; sourceTree = "<group>"; };
+		E41457967C33F1841ECCE62E /* Pods-RZIntrinsicContentSizeTextView-RZUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RZIntrinsicContentSizeTextView-RZUtils-prefix.pch"; sourceTree = "<group>"; };
+		EC6C0E8281DA5D4B65DADC08 /* Pods-RZIntrinsicContentSizeTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RZIntrinsicContentSizeTextView-dummy.m"; sourceTree = "<group>"; };
+		EDA9493B5BE389855D9FA691 /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F22B1A453C247CC56A02FF7C /* Pods-Tests-RZIntrinsicContentSizeTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-Tests-RZIntrinsicContentSizeTextView-prefix.pch"; path = "../Pods-Tests-RZIntrinsicContentSizeTextView/Pods-Tests-RZIntrinsicContentSizeTextView-prefix.pch"; sourceTree = "<group>"; };
+		F42358DCF12FDD39856EA462 /* Pods-Tests-RZIntrinsicContentSizeTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Tests-RZIntrinsicContentSizeTextView-dummy.m"; path = "../Pods-Tests-RZIntrinsicContentSizeTextView/Pods-Tests-RZIntrinsicContentSizeTextView-dummy.m"; sourceTree = "<group>"; };
+		F62DA2136936FF0A700BE26C /* RZIntrinsicContentSizeTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RZIntrinsicContentSizeTextView.h; sourceTree = "<group>"; };
+		FB7ACF26F941500F1757B0EA /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		256A21A6D407076BA6C865E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046BAFEA2EFF1ED9D470F817 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25D7558A8C4FFFF79E601EB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6635858679E4AC099D0F33 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67E9815B25E7CE3D9B46862F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D06A2CB300B99A7BE73E0280 /* Foundation.framework in Frameworks */,
+				43BA6C75556EED39C47C0752 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED5F2B8D0926300A74DCB91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8EA5D75DA5A49861E0D5ED /* Foundation.framework in Frameworks */,
+				6A1907D060D403787AE1674C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6E5C96CE3FDC8201593B2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B08DB0F424CB508999C9776 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E84C3CEE0C4A9402124D6EA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFF1134FC6ACF42B814B5922 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02464B7B307D044D33F83326 /* RZIntrinsicContentSizeTextView */ = {
+			isa = PBXGroup;
+			children = (
+				E772728156FEF7D86C275C3D /* Pod */,
+				F0BDEC79B179C01611B58336 /* Support Files */,
+			);
+			name = RZIntrinsicContentSizeTextView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		08B06448A8D801D5AD68B3CB /* Pods-RZIntrinsicContentSizeTextView */ = {
+			isa = PBXGroup;
+			children = (
+				4D3D0531E803611C533A05D2 /* Pods-RZIntrinsicContentSizeTextView-acknowledgements.markdown */,
+				CA7DDCE68C4088652EA0164B /* Pods-RZIntrinsicContentSizeTextView-acknowledgements.plist */,
+				EC6C0E8281DA5D4B65DADC08 /* Pods-RZIntrinsicContentSizeTextView-dummy.m */,
+				DD55CCD47EA1F1DFA50F147B /* Pods-RZIntrinsicContentSizeTextView-environment.h */,
+				1DF4CE28B57E0A18279E2BF3 /* Pods-RZIntrinsicContentSizeTextView-resources.sh */,
+				4D5DD07CC0C4B9728A8FFC1A /* Pods-RZIntrinsicContentSizeTextView.debug.xcconfig */,
+				4D8104EBC502CEF22AB7C6C7 /* Pods-RZIntrinsicContentSizeTextView.release.xcconfig */,
+			);
+			name = "Pods-RZIntrinsicContentSizeTextView";
+			path = "Target Support Files/Pods-RZIntrinsicContentSizeTextView";
+			sourceTree = "<group>";
+		};
+		08E0C8FACBD216F5297ED7C9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F62DA2136936FF0A700BE26C /* RZIntrinsicContentSizeTextView.h */,
+				0923F37329136A7ACF0BCCCC /* RZIntrinsicContentSizeTextView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0B005D7A8EFA0DBDA7AF49A0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5DC31399D41BD03884F667FF /* Foundation.framework */,
+				2AAEECE5F328F2B6E7F1CE61 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		108C49C458D117EE23C1FF0E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				814CADAC75E2F896E1F34C22 /* UIView+RZAutoLayoutPriorityHelpers.h */,
+				32EF14B2BF8F7EA822B3B857 /* UIView+RZAutoLayoutPriorityHelpers.m */,
+				E02532442083AF7F30E7E897 /* UIView+RZAutoLayoutReplacementHelpers.h */,
+				9D9D9168BD6F51B432CCE6ED /* UIView+RZAutoLayoutReplacementHelpers.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		4DB850190EFAA52EA7608C51 = {
+			isa = PBXGroup;
+			children = (
+				DE9622F98D77CEF2EAB713A7 /* Podfile */,
+				C389CA72F301C5EB7DD001E2 /* Development Pods */,
+				A67583C2EC0E9EA883179891 /* Frameworks */,
+				C433819EB9C559C1F93E33D3 /* Pods */,
+				A742CC6CBB97D7BF7827A44E /* Products */,
+				80A34725D77E1BF9319A72EC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		80A34725D77E1BF9319A72EC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				08B06448A8D801D5AD68B3CB /* Pods-RZIntrinsicContentSizeTextView */,
+				A0817A72B3FCC6F734723D53 /* Pods-Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8F8C0A65AB65D52D8301354A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				C32ACAD3A71901FD4565049D /* UIView+RZAutoLayoutHelpers.h */,
+				4B6610A202896CE5F1C08097 /* UIView+RZAutoLayoutHelpers.m */,
+				DE6C444D5393E5AAB746F2FC /* UIView+RZBorders.h */,
+				4613BDF6178C8058FF842189 /* UIView+RZBorders.m */,
+				395103BA06A1BE3661888AE9 /* UIView+RZFrameUtils.h */,
+				3AB4951A064D7BD631DD557D /* UIView+RZFrameUtils.m */,
+			);
+			name = UIView;
+			sourceTree = "<group>";
+		};
+		A0817A72B3FCC6F734723D53 /* Pods-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EDA9493B5BE389855D9FA691 /* Pods-Tests-acknowledgements.markdown */,
+				655B6F1170A41BDDB2BDEEFA /* Pods-Tests-acknowledgements.plist */,
+				7F0A5BB5445AD3C7F6ED8B84 /* Pods-Tests-dummy.m */,
+				CA749FE5A6DA88BCEB736E0D /* Pods-Tests-environment.h */,
+				FB7ACF26F941500F1757B0EA /* Pods-Tests-resources.sh */,
+				30C97E81774E85A6F1B27B57 /* Pods-Tests.debug.xcconfig */,
+				6E9B5EF8B9DA81BADF0B6C2A /* Pods-Tests.release.xcconfig */,
+			);
+			name = "Pods-Tests";
+			path = "Target Support Files/Pods-Tests";
+			sourceTree = "<group>";
+		};
+		A67583C2EC0E9EA883179891 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B005D7A8EFA0DBDA7AF49A0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A742CC6CBB97D7BF7827A44E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				738674BF12E9C8D9AADDD036 /* libPods-RZIntrinsicContentSizeTextView.a */,
+				5F75F3056976F1A29F49AA46 /* libPods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView.a */,
+				4A0967162DDB36C6DE7F5B1B /* libPods-RZIntrinsicContentSizeTextView-RZUtils.a */,
+				6978C8054462C3AC09791F04 /* libPods-Tests.a */,
+				272928053578F7D97660BE42 /* libPods-Tests-RZIntrinsicContentSizeTextView.a */,
+				62B1E422AEA52F774B60C910 /* libPods-Tests-RZUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABB0B9126CA80BFECD629C52 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				807B613992B665A2B226D952 /* Pods-RZIntrinsicContentSizeTextView-RZUtils.xcconfig */,
+				282AD180BBE44EB2D6F715B5 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-Private.xcconfig */,
+				40FB2317325091BBE9049679 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-dummy.m */,
+				E41457967C33F1841ECCE62E /* Pods-RZIntrinsicContentSizeTextView-RZUtils-prefix.pch */,
+				7754A92D8A4E5E459F00E95C /* Pods-Tests-RZUtils.xcconfig */,
+				B7B370387EBB8FF31C59C533 /* Pods-Tests-RZUtils-Private.xcconfig */,
+				4C1E6A5CBF65768583861286 /* Pods-Tests-RZUtils-dummy.m */,
+				6C52946961F508356648AFF0 /* Pods-Tests-RZUtils-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-RZIntrinsicContentSizeTextView-RZUtils";
+			sourceTree = "<group>";
+		};
+		AEFC848AE826255137F7BC30 /* RZUtils */ = {
+			isa = PBXGroup;
+			children = (
+				FFAD17ACDDE42FD2EAC3637C /* Categories */,
+				ABB0B9126CA80BFECD629C52 /* Support Files */,
+			);
+			path = RZUtils;
+			sourceTree = "<group>";
+		};
+		C389CA72F301C5EB7DD001E2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02464B7B307D044D33F83326 /* RZIntrinsicContentSizeTextView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		C433819EB9C559C1F93E33D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEFC848AE826255137F7BC30 /* RZUtils */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E772728156FEF7D86C275C3D /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				108C49C458D117EE23C1FF0E /* Categories */,
+				08E0C8FACBD216F5297ED7C9 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		F0BDEC79B179C01611B58336 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADE74D87A5F017BDA0DDE1AA /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView.xcconfig */,
+				BE4AE63A2847E0A635950AEE /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-Private.xcconfig */,
+				4F4F71B54F6D4103FA166AE7 /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-dummy.m */,
+				C7E277F69AC106C4999ED1CE /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-prefix.pch */,
+				1557BE17135B58BAC4557F1F /* Pods-Tests-RZIntrinsicContentSizeTextView.xcconfig */,
+				D6820A329518C2E026342FF7 /* Pods-Tests-RZIntrinsicContentSizeTextView-Private.xcconfig */,
+				F42358DCF12FDD39856EA462 /* Pods-Tests-RZIntrinsicContentSizeTextView-dummy.m */,
+				F22B1A453C247CC56A02FF7C /* Pods-Tests-RZIntrinsicContentSizeTextView-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView";
+			sourceTree = "<group>";
+		};
+		FFAD17ACDDE42FD2EAC3637C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8F8C0A65AB65D52D8301354A /* UIView */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7ECAD75A1324288C3F792C1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341DCE752F02D3BA9ABE18D6 /* UIView+RZAutoLayoutHelpers.h in Headers */,
+				14306C66CED81756F5C36568 /* UIView+RZBorders.h in Headers */,
+				F7BD58F2C07A695678F0065D /* UIView+RZFrameUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9268C997C75FD8E106258A57 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D1B2F3434C4B11528773E2 /* RZIntrinsicContentSizeTextView.h in Headers */,
+				8D1548FC4AA27993EBE35915 /* UIView+RZAutoLayoutPriorityHelpers.h in Headers */,
+				5F4401EC05327A36042D1C4D /* UIView+RZAutoLayoutReplacementHelpers.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CEE69C5A7BB5A559CDFC65 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9A2D97F015B69A1A7B842A0 /* UIView+RZAutoLayoutHelpers.h in Headers */,
+				F0B36BA937892C97685C8A73 /* UIView+RZBorders.h in Headers */,
+				A7D9A3B497B71B725B35B46B /* UIView+RZFrameUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFBB2A6BBA61A4C936F8359 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C980E505193D67F28917168 /* RZIntrinsicContentSizeTextView.h in Headers */,
+				B67D6E2CAB7510A9CAC657F9 /* UIView+RZAutoLayoutPriorityHelpers.h in Headers */,
+				02BEAC989AB22ADEDD9CCF3E /* UIView+RZAutoLayoutReplacementHelpers.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		019636733D6978BF8DFD3D22 /* Pods-Tests-RZUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514FBF3D8E02A439B1D0C441 /* Build configuration list for PBXNativeTarget "Pods-Tests-RZUtils" */;
+			buildPhases = (
+				7AA665A62184EAA396C60764 /* Sources */,
+				6ED5F2B8D0926300A74DCB91 /* Frameworks */,
+				A2CEE69C5A7BB5A559CDFC65 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Tests-RZUtils";
+			productName = "Pods-Tests-RZUtils";
+			productReference = 62B1E422AEA52F774B60C910 /* libPods-Tests-RZUtils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		19532F4AC37FBFD1B64FA678 /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32B121D2C9C13739F4ACEB1F /* Build configuration list for PBXNativeTarget "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView" */;
+			buildPhases = (
+				5F0A5CFFE4EC6BA972B2D335 /* Sources */,
+				E84C3CEE0C4A9402124D6EA2 /* Frameworks */,
+				CFFBB2A6BBA61A4C936F8359 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18875859D1722A1D8C5C07D0 /* PBXTargetDependency */,
+			);
+			name = "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView";
+			productName = "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView";
+			productReference = 5F75F3056976F1A29F49AA46 /* libPods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5FF4BBF0FD8ABF7921C714B5 /* Pods-RZIntrinsicContentSizeTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28F7CB8C80CF88658F345C4D /* Build configuration list for PBXNativeTarget "Pods-RZIntrinsicContentSizeTextView" */;
+			buildPhases = (
+				E5FFEEE0505338CC027BAC63 /* Sources */,
+				256A21A6D407076BA6C865E5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A350EFDCE0C3F8E158B5C50 /* PBXTargetDependency */,
+				1D652D3A4BCB9CC7299DA86A /* PBXTargetDependency */,
+			);
+			name = "Pods-RZIntrinsicContentSizeTextView";
+			productName = "Pods-RZIntrinsicContentSizeTextView";
+			productReference = 738674BF12E9C8D9AADDD036 /* libPods-RZIntrinsicContentSizeTextView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7168A99797F3B00E2A053DF8 /* Pods-RZIntrinsicContentSizeTextView-RZUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61CCC07AAF6BBE75150A9D0C /* Build configuration list for PBXNativeTarget "Pods-RZIntrinsicContentSizeTextView-RZUtils" */;
+			buildPhases = (
+				D79CDA4D9C3A88864ABE61B9 /* Sources */,
+				67E9815B25E7CE3D9B46862F /* Frameworks */,
+				7ECAD75A1324288C3F792C1B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-RZIntrinsicContentSizeTextView-RZUtils";
+			productName = "Pods-RZIntrinsicContentSizeTextView-RZUtils";
+			productReference = 4A0967162DDB36C6DE7F5B1B /* libPods-RZIntrinsicContentSizeTextView-RZUtils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ABA2F2281EFD85BB557687BF /* Pods-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13D43E9E22D940E3C6E56217 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
+			buildPhases = (
+				C4DBE389DA2D1973DC847C4E /* Sources */,
+				BB6E5C96CE3FDC8201593B2F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0C5F762548BFB43A4B0DAC4 /* PBXTargetDependency */,
+				A839DC54C0C2E24F3F1507DF /* PBXTargetDependency */,
+			);
+			name = "Pods-Tests";
+			productName = "Pods-Tests";
+			productReference = 6978C8054462C3AC09791F04 /* libPods-Tests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F3241643346D3CDAF6565846 /* Pods-Tests-RZIntrinsicContentSizeTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8D5C6301FD5106E1C80066E /* Build configuration list for PBXNativeTarget "Pods-Tests-RZIntrinsicContentSizeTextView" */;
+			buildPhases = (
+				0F23E0D0F7B2E5C833BD5AEB /* Sources */,
+				25D7558A8C4FFFF79E601EB6 /* Frameworks */,
+				9268C997C75FD8E106258A57 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D5237DCC71F1CAAA2F8F939 /* PBXTargetDependency */,
+			);
+			name = "Pods-Tests-RZIntrinsicContentSizeTextView";
+			productName = "Pods-Tests-RZIntrinsicContentSizeTextView";
+			productReference = 272928053578F7D97660BE42 /* libPods-Tests-RZIntrinsicContentSizeTextView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7846677EB726285948D6925F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 7269722A999AE002D19ED813 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4DB850190EFAA52EA7608C51;
+			productRefGroup = A742CC6CBB97D7BF7827A44E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FF4BBF0FD8ABF7921C714B5 /* Pods-RZIntrinsicContentSizeTextView */,
+				19532F4AC37FBFD1B64FA678 /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView */,
+				7168A99797F3B00E2A053DF8 /* Pods-RZIntrinsicContentSizeTextView-RZUtils */,
+				ABA2F2281EFD85BB557687BF /* Pods-Tests */,
+				F3241643346D3CDAF6565846 /* Pods-Tests-RZIntrinsicContentSizeTextView */,
+				019636733D6978BF8DFD3D22 /* Pods-Tests-RZUtils */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F23E0D0F7B2E5C833BD5AEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C5F0C6E0B0899EE09F9E067 /* Pods-Tests-RZIntrinsicContentSizeTextView-dummy.m in Sources */,
+				C83E39DCE9DAEDD64EA7F59A /* RZIntrinsicContentSizeTextView.m in Sources */,
+				71BFD469E811C1D9862F748C /* UIView+RZAutoLayoutPriorityHelpers.m in Sources */,
+				184E1BE1E1E54D7786F2CEE0 /* UIView+RZAutoLayoutReplacementHelpers.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F0A5CFFE4EC6BA972B2D335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2EEE20A1AB8769D00848A44 /* RZIntrinsicContentSizeTextView.m in Sources */,
+				9074E35A6410A5B92D7E6710 /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-dummy.m in Sources */,
+				81FCDA94AF4B0894C9FB4953 /* UIView+RZAutoLayoutPriorityHelpers.m in Sources */,
+				95C3FF7D7542AC84854AF5BE /* UIView+RZAutoLayoutReplacementHelpers.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA665A62184EAA396C60764 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B428F9CACDC61EAB7AB5D37 /* Pods-Tests-RZUtils-dummy.m in Sources */,
+				5970B70FEBBE7A384F7817FC /* UIView+RZAutoLayoutHelpers.m in Sources */,
+				C24A8AACF933405FE23657FC /* UIView+RZBorders.m in Sources */,
+				39D596DB0FBE251C1BF9F6E8 /* UIView+RZFrameUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4DBE389DA2D1973DC847C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F0954682563705104E4CA22 /* Pods-Tests-dummy.m in Sources */,
+				C2EEE2051AB872E800848A44 /* UIView+RZAutoLayoutPriorityHelpers.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79CDA4D9C3A88864ABE61B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F3ED4DB3CFB7555E0F90767 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-dummy.m in Sources */,
+				97CC226CEE2380BCA8A5FEDA /* UIView+RZAutoLayoutHelpers.m in Sources */,
+				98EFAD142D66181B3623F301 /* UIView+RZBorders.m in Sources */,
+				662F179AF4C1256A645678B8 /* UIView+RZFrameUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5FFEEE0505338CC027BAC63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733C032A641B61CC5DA10993 /* Pods-RZIntrinsicContentSizeTextView-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18875859D1722A1D8C5C07D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RZIntrinsicContentSizeTextView-RZUtils";
+			target = 7168A99797F3B00E2A053DF8 /* Pods-RZIntrinsicContentSizeTextView-RZUtils */;
+			targetProxy = 623E01D75139C9A391300404 /* PBXContainerItemProxy */;
+		};
+		1D652D3A4BCB9CC7299DA86A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RZIntrinsicContentSizeTextView-RZUtils";
+			target = 7168A99797F3B00E2A053DF8 /* Pods-RZIntrinsicContentSizeTextView-RZUtils */;
+			targetProxy = 056C6B05A7C4B2F89710E0B6 /* PBXContainerItemProxy */;
+		};
+		2A350EFDCE0C3F8E158B5C50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView";
+			target = 19532F4AC37FBFD1B64FA678 /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView */;
+			targetProxy = 1DA862C499BA3416B6EF4D71 /* PBXContainerItemProxy */;
+		};
+		2D5237DCC71F1CAAA2F8F939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tests-RZUtils";
+			target = 019636733D6978BF8DFD3D22 /* Pods-Tests-RZUtils */;
+			targetProxy = FB106D70809081B95C5EB93B /* PBXContainerItemProxy */;
+		};
+		A0C5F762548BFB43A4B0DAC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tests-RZIntrinsicContentSizeTextView";
+			target = F3241643346D3CDAF6565846 /* Pods-Tests-RZIntrinsicContentSizeTextView */;
+			targetProxy = 6E2AF16D6E86B6E13FBF7E41 /* PBXContainerItemProxy */;
+		};
+		A839DC54C0C2E24F3F1507DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tests-RZUtils";
+			target = 019636733D6978BF8DFD3D22 /* Pods-Tests-RZUtils */;
+			targetProxy = 03C7DDE8A622C90277403E2D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		108352F9D27043E17EE6522D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C97E81774E85A6F1B27B57 /* Pods-Tests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		17EE19B23DB65D246FBBEAC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE4AE63A2847E0A635950AEE /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView/Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		24CBEA58B3145AE17A58F3DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6820A329518C2E026342FF7 /* Pods-Tests-RZIntrinsicContentSizeTextView-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-RZIntrinsicContentSizeTextView/Pods-Tests-RZIntrinsicContentSizeTextView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		404258AC3BB9C65E3CFB3417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D5DD07CC0C4B9728A8FFC1A /* Pods-RZIntrinsicContentSizeTextView.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		59BE22E32B484E26E85A913C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 282AD180BBE44EB2D6F715B5 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-RZIntrinsicContentSizeTextView-RZUtils/Pods-RZIntrinsicContentSizeTextView-RZUtils-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5A31DC8A9CCC6870BFF6DA54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		60A30C406BF6DB50CF884FE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 282AD180BBE44EB2D6F715B5 /* Pods-RZIntrinsicContentSizeTextView-RZUtils-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-RZIntrinsicContentSizeTextView-RZUtils/Pods-RZIntrinsicContentSizeTextView-RZUtils-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		71FFE20D419856687A27E8FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E9B5EF8B9DA81BADF0B6C2A /* Pods-Tests.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		732FA882F2A315C6112DC4CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7B370387EBB8FF31C59C533 /* Pods-Tests-RZUtils-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-RZUtils/Pods-Tests-RZUtils-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		905AC6B552C0C96A82FF60F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE4AE63A2847E0A635950AEE /* Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView/Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C78F227BC6AC6B5550F0C491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7B370387EBB8FF31C59C533 /* Pods-Tests-RZUtils-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-RZUtils/Pods-Tests-RZUtils-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D252E46292383385DEBDE24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8104EBC502CEF22AB7C6C7 /* Pods-RZIntrinsicContentSizeTextView.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F0C4E4EA783ADC3AA345EC9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6820A329518C2E026342FF7 /* Pods-Tests-RZIntrinsicContentSizeTextView-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-RZIntrinsicContentSizeTextView/Pods-Tests-RZIntrinsicContentSizeTextView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F10C01C1189773D9E11B6F8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13D43E9E22D940E3C6E56217 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				108352F9D27043E17EE6522D /* Debug */,
+				71FFE20D419856687A27E8FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28F7CB8C80CF88658F345C4D /* Build configuration list for PBXNativeTarget "Pods-RZIntrinsicContentSizeTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404258AC3BB9C65E3CFB3417 /* Debug */,
+				D252E46292383385DEBDE24B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32B121D2C9C13739F4ACEB1F /* Build configuration list for PBXNativeTarget "Pods-RZIntrinsicContentSizeTextView-RZIntrinsicContentSizeTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				905AC6B552C0C96A82FF60F1 /* Debug */,
+				17EE19B23DB65D246FBBEAC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		514FBF3D8E02A439B1D0C441 /* Build configuration list for PBXNativeTarget "Pods-Tests-RZUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C78F227BC6AC6B5550F0C491 /* Debug */,
+				732FA882F2A315C6112DC4CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61CCC07AAF6BBE75150A9D0C /* Build configuration list for PBXNativeTarget "Pods-RZIntrinsicContentSizeTextView-RZUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60A30C406BF6DB50CF884FE0 /* Debug */,
+				59BE22E32B484E26E85A913C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7269722A999AE002D19ED813 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A31DC8A9CCC6870BFF6DA54 /* Debug */,
+				F10C01C1189773D9E11B6F8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8D5C6301FD5106E1C80066E /* Build configuration list for PBXNativeTarget "Pods-Tests-RZIntrinsicContentSizeTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24CBEA58B3145AE17A58F3DB /* Debug */,
+				F0C4E4EA783ADC3AA345EC9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7846677EB726285948D6925F /* Project object */;
+}

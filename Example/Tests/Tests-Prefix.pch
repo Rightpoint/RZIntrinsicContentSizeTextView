@@ -6,6 +6,10 @@
 
 #ifdef __OBJC__
 
-  
+@import XCTest;
+
+#import "RZTestConstants.h"
+#import "UIView+RZAutoLayoutHelpers.h"
+#import "RZIntrinsicContentSizeTextView.h"
 
 #endif

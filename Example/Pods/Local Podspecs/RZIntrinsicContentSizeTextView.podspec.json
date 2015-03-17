@@ -1,0 +1,25 @@
+{
+  "name": "RZIntrinsicContentSizeTextView",
+  "version": "0.1.0",
+  "summary": "RZIntrinsicContentSizeTextView is a UITextView that grows dynamically in height.",
+  "homepage": "https://github.com/Raizlabs/RZIntrinsicContentSizeTextView.git",
+  "license": "MIT",
+  "authors": {
+    "Derek Ostrander": "derek@raizlabs.com"
+  },
+  "source": {
+    "git": "https://github.com/Raizlabs/RZIntrinsicContentSizeTextView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/**/*",
+  "public_header_files": "Pod/Classes/**/*.h",
+  "dependencies": {
+    "RZUtils/Categories/UIView": [
+
+    ]
+  }
+}
