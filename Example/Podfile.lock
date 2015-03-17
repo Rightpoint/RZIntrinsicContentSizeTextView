@@ -1,0 +1,14 @@
+PODS:
+  - RZIntrinsicContentSizeTextView (0.1.0)
+
+DEPENDENCIES:
+  - RZIntrinsicContentSizeTextView (from `../`)
+
+EXTERNAL SOURCES:
+  RZIntrinsicContentSizeTextView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  RZIntrinsicContentSizeTextView: 1186d51e732a7c96cf31b320094a0f8d33d31e05
+
+COCOAPODS: 0.36.0
