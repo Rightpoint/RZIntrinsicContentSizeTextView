@@ -16,10 +16,5 @@
   },
   "requires_arc": true,
   "source_files": "Pod/**/*",
-  "public_header_files": "Pod/Classes/**/*.h",
-  "dependencies": {
-    "RZUtils/Categories/UIView": [
-
-    ]
-  }
+  "public_header_files": "Pod/Classes/**/*.h"
 }
