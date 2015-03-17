@@ -2,6 +2,7 @@
 .DS_Store
 
 # Xcode
+
 build/
 *.pbxuser
 !default.pbxuser
@@ -13,7 +14,9 @@ build/
 !default.perspectivev3
 xcuserdata
 *.xccheckout
+
 profile
+
 *.moved-aside
 DerivedData
 *.hmap
