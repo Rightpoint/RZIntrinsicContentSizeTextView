@@ -10,29 +10,17 @@
 Pod::Spec.new do |s|
   s.name             = "RZIntrinsicContentSizeTextView"
   s.version          = "0.1.0"
-  s.summary          = "A short description of RZIntrinsicContentSizeTextView."
-  s.description      = <<-DESC
-                       An optional longer description of RZIntrinsicContentSizeTextView
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/RZIntrinsicContentSizeTextView"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.summary          = "RZIntrinsicContentSizeTextView is a UITextView that grows dynamically in height."
+  s.homepage         = "https://github.com/Raizlabs/RZIntrinsicContentSizeTextView.git"
   s.license          = 'MIT'
-  s.author           = { "Derek Ostrander" => "djostran@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/RZIntrinsicContentSizeTextView.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Derek Ostrander" => "derek@raizlabs.com" }
+  s.source           = { :git => "https://github.com/Raizlabs/RZIntrinsicContentSizeTextView.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'RZIntrinsicContentSizeTextView' => ['Pod/Assets/*.png']
-  }
+  s.source_files = 'Pod/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.dependency 'RZUtils/Categories/UIView'
 end
