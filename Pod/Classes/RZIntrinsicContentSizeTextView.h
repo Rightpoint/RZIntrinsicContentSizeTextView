@@ -90,4 +90,30 @@ IB_DESIGNABLE
  */
 - (UIView *)intrinsicTextViewLayoutView:(RZIntrinsicContentSizeTextView *)textView;
 
+// TODO: Implement these
+///**
+// *  @param textView The textview that is about to change size
+// *  @param toSize   The size it is projected to change to
+// *
+// *  @return Whether or not the textview should change to it's new size
+// *  @note this defaults to YES
+// */
+//- (BOOL)intrinsicTextView:(RZIntrinsicContentSizeTextView *)textView shouldChangeToSize:(CGSize)toSize;
+//
+///**
+// *  Called before the size change
+// *
+// *  @param textView The textview that is about to change size
+// *  @param toSize   The size it is projected to change to
+// */
+//- (void)intrinsicTextView:(RZIntrinsicContentSizeTextView *)textView willChangeToSize:(CGSize)toSize;
+//
+///**
+// *  Called after the size change
+// *
+// *  @param textView The textview that is about to change size
+// *  @param toSize   The size it is projected to change to
+// */
+//- (void)intrinsicTextView:(RZIntrinsicContentSizeTextView *)textView didChangeToSize:(CGSize)toSize;
+
 @end
