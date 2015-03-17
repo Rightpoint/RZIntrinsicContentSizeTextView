@@ -1,7 +1,5 @@
 PODS:
-  - RZIntrinsicContentSizeTextView (0.1.0):
-    - RZUtils/Categories/UIView
-  - RZUtils/Categories/UIView (2.4.0)
+  - RZIntrinsicContentSizeTextView (0.1.0)
 
 DEPENDENCIES:
   - RZIntrinsicContentSizeTextView (from `../`)
@@ -11,7 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  RZIntrinsicContentSizeTextView: 11cb60e7e8dc251fc4b29b75197d5a2268e3f04b
-  RZUtils: 51a759b13f362b49bdd426f96440c75249b16453
+  RZIntrinsicContentSizeTextView: 1186d51e732a7c96cf31b320094a0f8d33d31e05
 
 COCOAPODS: 0.36.0

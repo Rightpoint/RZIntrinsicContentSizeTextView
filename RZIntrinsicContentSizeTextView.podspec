@@ -22,5 +22,4 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/**/*'
 
   s.public_header_files = 'Pod/Classes/**/*.h'
-  s.dependency 'RZUtils/Categories/UIView'
 end
