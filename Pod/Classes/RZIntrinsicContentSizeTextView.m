@@ -63,19 +63,19 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 #pragma mark - View Life Cycle
 
-- (id)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer
+- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer
 {
     self = [super initWithFrame:frame textContainer:textContainer];
-    if ( self ) {
+    if ( self != nil ) {
         [self configureIntrinsicTextView];
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    if ( self ) {
+    if ( self != nil ) {
         [self configureIntrinsicTextView];
     }
     return self;

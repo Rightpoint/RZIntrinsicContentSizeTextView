@@ -60,7 +60,7 @@ IB_DESIGNABLE
 
 /**
  *  Delegate to have more fine tuned control for if/when/how it should change it's size.
- *  @note Many in many instances you won't have to use this.
+ *  @note in many instances you won't have to use this.
  */
 @property (weak, nonatomic, readwrite) id<RZIntrinsicContentSizeTextViewSizeChangedDelegate> sizeChangeDelegate;
 
