@@ -374,8 +374,11 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     // This is the best way to get the cursor starting point
     // which is where to place the placeholder view
     CGRect startRect = [self firstRectForRange:[self textRangeFromPosition:self.beginningOfDocument toPosition:self.beginningOfDocument]];
-    self.placeholderLabel.rz_pinnedLeftConstraint.constant = CGRectGetMinX(startRect);
-    self.placeholderLabel.rz_pinnedTopConstraint.constant = CGRectGetMinY(startRect);
+
+    if ( !CGRectIsNull(startRect) ) {
+        self.placeholderLabel.rz_pinnedLeftConstraint.constant = CGRectGetMinX(startRect);
+        self.placeholderLabel.rz_pinnedTopConstraint.constant = CGRectGetMinY(startRect);
+    }
 }
 
 #pragma mark - Scroll Helpers
