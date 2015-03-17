@@ -66,6 +66,7 @@
 
     // set textview attributes
     self.textView.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    self.textView.sizeChangeDelegate = self;
 
     // set placeholder attributes
     self.textView.placeholder = @"Hey hey hey";
