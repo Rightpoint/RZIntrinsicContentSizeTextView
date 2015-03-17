@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/RZIntrinsicContentSizeTextView.svg?style=flat)](http://cocoadocs.org/docsets/RZIntrinsicContentSizeTextView)
 [![Platform](https://img.shields.io/cocoapods/p/RZIntrinsicContentSizeTextView.svg?style=flat)](http://cocoadocs.org/docsets/RZIntrinsicContentSizeTextView)
 -->
-RZIntrinsicContentSizeTextView is a convinient UITextView subclass that has all the features you wish were in UITextView: a placeholder and the ability to dynamically grow based on it's content size.
+RZIntrinsicContentSizeTextView is a convenient UITextView subclass that has all the features you wish were in UITextView: a placeholder and the ability to dynamically grow based on its content size.
 
-This is ideal for the many messaging applications where the user is typing into a textview that will start off small.
+This is ideal for the many messaging applications where the user is typing into a textview that will start off small, but will then need to grow in height and/or width as needed.
 
 ## Installation
 
@@ -31,7 +31,7 @@ The placeholder interface is similar to that of a UITextField.
 	.atributedPlaceholer attributedString for the placeholder label.
 
 If you need more fine grained control over how the placeholder looks you can use the `.attributedPlaceholder`  
-**Note:** the size of the textview does not take into account a different font then the `.font` property
+**Note:** the size of the textview does not take into account a different font then the `.font` property. For the time being it is encouraged that these two fonts be equal
 
 ###Size Changing
 
