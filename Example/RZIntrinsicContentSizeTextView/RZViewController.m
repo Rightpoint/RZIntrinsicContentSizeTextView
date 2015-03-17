@@ -33,9 +33,9 @@
 
 @interface RZViewController () <RZIntrinsicContentSizeTextViewSizeChangedDelegate>
 
-@property (weak, nonatomic) IBOutlet RZIntrinsicContentSizeTextView *textView;
+@property (strong, nonatomic) RZIntrinsicContentSizeTextView *textView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *bottomConstraint;
 
 @end
 
@@ -58,6 +58,54 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // add textview to view
+    self.textView =  [[RZIntrinsicContentSizeTextView alloc] initWithFrame:CGRectZero];
+    self.textView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.textView];
+
+    // set textview attributes
+    self.textView.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+
+    // set placeholder attributes
+    self.textView.placeholder = @"Hey hey hey";
+    self.textView.placeholderTextColor = [UIColor redColor];
+
+    // Pin the textview to the bottom of the view
+    NSDictionary *views = NSDictionaryOfVariableBindings(_textView,self.view);
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_textView]|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:views]];
+    self.bottomConstraint = [NSLayoutConstraint constraintWithItem:self.view
+                                                         attribute:NSLayoutAttributeBottom
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self.textView
+                                                         attribute:NSLayoutAttributeBottom
+                                                        multiplier:1.0f
+                                                          constant:0.0f];
+    [self.view addConstraint:self.bottomConstraint];
+
+    // set min/max constraints
+    NSLayoutConstraint *minHeightConstraint = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                           attribute:NSLayoutAttributeHeight
+                                                                           relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                              toItem:nil
+                                                                           attribute:NSLayoutAttributeNotAnAttribute
+                                                                          multiplier:1.0f
+                                                                            constant:40.0f];
+    [self.textView addConstraint:minHeightConstraint];
+
+    NSLayoutConstraint *maxHeightConstraint = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                           attribute:NSLayoutAttributeHeight
+                                                                           relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                              toItem:nil
+                                                                           attribute:NSLayoutAttributeNotAnAttribute
+                                                                          multiplier:1.0f
+                                                                            constant:100.0f];
+    [self.textView addConstraint:maxHeightConstraint];
+
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(moveKeyboard:)
                                                  name:UIKeyboardWillShowNotification
@@ -74,13 +122,12 @@
 - (void)moveKeyboard:(NSNotification *)notification
 {
     NSDictionary *keyboardInfo = notification.userInfo;
-    CGFloat keyboardBeginPoint = CGRectGetMinY([keyboardInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue]);
     CGFloat keyboardEndPoint = CGRectGetMinY([keyboardInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue]);
     CGFloat keyboardTotalHeight = CGRectGetHeight([keyboardInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue]);
     CGFloat duration = [keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] floatValue];
     UIViewAnimationOptions animationOptions = [keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue] << 16;
 
-    self.bottomConstraint.constant = ( keyboardEndPoint < keyboardBeginPoint ) ? keyboardTotalHeight : 0.0f;
+    self.bottomConstraint.constant = ( keyboardEndPoint != CGRectGetHeight([UIScreen mainScreen].bounds) ) ? keyboardTotalHeight : 0.0f;
     [self.view setNeedsLayout];
 
     [UIView animateWithDuration:duration delay:0.0f options:animationOptions animations:^{
