@@ -9,11 +9,11 @@
 
 Pod::Spec.new do |s|
   s.name             = "RZIntrinsicContentSizeTextView"
-  s.version          = "0.1.0"
+  s.version          = "0.1"
   s.summary          = "RZIntrinsicContentSizeTextView is a UITextView that grows dynamically in height."
   s.homepage         = "https://github.com/Raizlabs/RZIntrinsicContentSizeTextView.git"
   s.license          = 'MIT'
-  s.author           = { "Derek Ostrander" => "derek@raizlabs.com" }
+  s.author           = { "Derek Ostrander" => "djostran@gmail.com" }
   s.source           = { :git => "https://github.com/Raizlabs/RZIntrinsicContentSizeTextView.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '8.0'
