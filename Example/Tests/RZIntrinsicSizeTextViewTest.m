@@ -124,7 +124,13 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 {
     self.textView.text = nil;
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMinHeight, @"Should be kRZMinHeight");
-    NSLayoutConstraint *min = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMinHeight];
+    NSLayoutConstraint *min = [NSLayoutConstraint constraintWithItem:self.textView
+                                                           attribute:NSLayoutAttributeHeight
+                                                           relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                              toItem:nil
+                                                           attribute:NSLayoutAttributeNotAnAttribute
+                                                          multiplier:1.0f
+                                                            constant:kRZMinHeight];
     [self.textView addConstraint:min];
     XCTAssertEqual(self.textView.rz_minHeightConstraint, min, @"The minimum constraint we just added should be the same as the one we find in the textview");
 
@@ -139,7 +145,13 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMinHeight, @"Should be kRZMinHeight");
 
     // Only max
-    NSLayoutConstraint *max = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMaxHeight];
+    NSLayoutConstraint *max = [NSLayoutConstraint constraintWithItem:self.textView
+                                                           attribute:NSLayoutAttributeHeight
+                                                           relatedBy:NSLayoutRelationLessThanOrEqual
+                                                              toItem:nil
+                                                           attribute:NSLayoutAttributeNotAnAttribute
+                                                          multiplier:1.0f
+                                                            constant:kRZMaxHeight];
     [self.textView addConstraint:max];
     XCTAssertEqual(self.textView.rz_maxHeightConstraint, max, @"The maximum constraint we just added should be the same as the one we find in the textview");
 
@@ -223,8 +235,21 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
     XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
 
-    NSLayoutConstraint *minConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMinHeight];
-    NSLayoutConstraint *maxConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMaxHeight];
+    NSLayoutConstraint *minConstraint = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                     attribute:NSLayoutAttributeHeight
+                                                                     relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                        toItem:nil
+                                                                     attribute:NSLayoutAttributeNotAnAttribute
+                                                                    multiplier:1.0f
+                                                                      constant:kRZMinHeight];
+
+    NSLayoutConstraint *maxConstraint = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                     attribute:NSLayoutAttributeHeight
+                                                                     relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                        toItem:nil
+                                                                     attribute:NSLayoutAttributeNotAnAttribute
+                                                                    multiplier:1.0f
+                                                                      constant:kRZMaxHeight];
 
     [self.textView addConstraints:@[minConstraint, maxConstraint]];
 
@@ -243,8 +268,21 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
     XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
 
-    NSLayoutConstraint *minConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMinHeight];
-    NSLayoutConstraint *maxConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMaxHeight];
+    NSLayoutConstraint *minConstraint = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                     attribute:NSLayoutAttributeHeight
+                                                                     relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                        toItem:nil
+                                                                     attribute:NSLayoutAttributeNotAnAttribute
+                                                                    multiplier:1.0f
+                                                                      constant:kRZMinHeight];
+
+    NSLayoutConstraint *maxConstraint = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                     attribute:NSLayoutAttributeHeight
+                                                                     relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                        toItem:nil
+                                                                     attribute:NSLayoutAttributeNotAnAttribute
+                                                                    multiplier:1.0f
+                                                                      constant:kRZMaxHeight];
 
     [self.textView addConstraints:@[minConstraint, maxConstraint]];
 
@@ -261,8 +299,21 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
 
     // Make sure it gets the ACTUAL min constraint
-    NSLayoutConstraint *minConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMinHeight];
-    NSLayoutConstraint *minConstraint2 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMaxHeight];
+    NSLayoutConstraint *minConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMinHeight];
+
+    NSLayoutConstraint *minConstraint2 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMaxHeight];
 
     [self.textView addConstraint:minConstraint1];
     XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint1, @"Min constraint should have been set");
@@ -280,8 +331,21 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
 
     // Make sure it gets the ACTUAL max constraint
-    NSLayoutConstraint *maxConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMinHeight];
-    NSLayoutConstraint *maxConstraint2 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMaxHeight];
+    NSLayoutConstraint *maxConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMinHeight];
+
+    NSLayoutConstraint *maxConstraint2 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMaxHeight];
 
     // make sure it's really long so we get the actual MAX
     self.textView.text = kRZLongText;
@@ -302,10 +366,37 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
 
     // Make sure it gets the ACTUAL min constraint
-    NSLayoutConstraint *minConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZNoHeight];
-    NSLayoutConstraint *minConstraint2 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMinHeight];
-    NSLayoutConstraint *minConstraint3 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMaxHeight];
-    NSLayoutConstraint *minConstraint4 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMidHeight];
+    NSLayoutConstraint *minConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZNoHeight];
+
+    NSLayoutConstraint *minConstraint2 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMinHeight];
+
+    NSLayoutConstraint *minConstraint3 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMaxHeight];
+
+    NSLayoutConstraint *minConstraint4 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMidHeight];
 
     [self.textView addConstraints:@[minConstraint1, minConstraint2]];
     XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint2, @"Min constraint should have been set");
@@ -322,10 +413,37 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 {
     XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
 
-    NSLayoutConstraint *maxConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMaxHeight];
-    NSLayoutConstraint *maxConstraint2 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMidHeight];
-    NSLayoutConstraint *maxConstraint3 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZNoHeight];
-    NSLayoutConstraint *maxConstraint4 = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kRZMinHeight];
+    NSLayoutConstraint *maxConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMaxHeight];
+
+    NSLayoutConstraint *maxConstraint2 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMidHeight];
+
+    NSLayoutConstraint *maxConstraint3 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZNoHeight];
+
+    NSLayoutConstraint *maxConstraint4 = [NSLayoutConstraint constraintWithItem:self.textView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0f
+                                                                       constant:kRZMinHeight];
 
     // make sure it's really long so we get the actual MAX
     self.textView.text = kRZLongText;
