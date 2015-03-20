@@ -28,6 +28,11 @@
 #import "RZTestConstants.h"
 
 NSString* const kRZShortText = @"FRY";
-NSString* const kRZLongText = @"Hey this is some kind of longer text. Let's make this long enough to at least span around 3 lines on a normal iPhone screen.";
+NSString* const kRZLongText = @"Lorem ipsum dolor sit amet, accumsan sapien eget ultrices ut ipsum per, velit orci quisque nec malesuada, ut nibh ut accumsan. Accumsan cursus sunt ligula tempus. Ullamcorper quam. Velit a pellentesque faucibus et faucibus, sit a nunc, arcu ac vel justo sed leo. Aliquam non, rhoncus augue sed elementum, mauris aliquet nulla fermentum a sed. Vel donec sapien et, eleifend ut gravida sapien. Erat tristique justo vestibulum eget risus, dictum nullam tortor massa, et justo duis tincidunt scelerisque, suspendisse pulvinar rutrum amet eget. Aliquam nec, fringilla pellentesque sed nulla malesuada. Et vehicula integer blandit risus maecenas.";
 NSString* const kRZNewLineText = @"\n\n\n\n\n";
 NSString* const kRZNewLineLongText = @"Hey this is some kind of longer text.\n\n\n\n\nLet's make this long enough to at least span around 3 lines on a normal iPhone screen.";
+
+const CGFloat kRZNoHeight = 0.0f;
+const CGFloat kRZMinHeight = 30.0f;
+const CGFloat kRZMidHeight = 120.0f;
+const CGFloat kRZMaxHeight = 200.0f;

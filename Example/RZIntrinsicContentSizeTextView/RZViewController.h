@@ -29,6 +29,10 @@
 
 @import UIKit;
 
+@class RZIntrinsicContentSizeTextView;
+
 @interface RZViewController : UIViewController
+
+@property (strong, nonatomic, readonly) RZIntrinsicContentSizeTextView *textView;
 
 @end
