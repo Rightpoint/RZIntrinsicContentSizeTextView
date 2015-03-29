@@ -39,9 +39,13 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 // Placholder
 @property (strong, nonatomic, readwrite) UILabel *placeholderLabel;
 
-// Semi-Dynamic Min/Max constraints
+// Dynamic Min/Max constraints
 @property (weak, nonatomic, readonly) NSLayoutConstraint *rz_minHeightConstraint;
 @property (weak, nonatomic, readonly) NSLayoutConstraint *rz_maxHeightConstraint;
+
+// Predicate helpers
++ (NSPredicate *)rz_minConstraintPredicate;
++ (NSPredicate *)rz_maxConstraintPredicate;
 
 // Size Helpers
 - (CGFloat)intrinsicContentHeight;
@@ -60,6 +64,22 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 @synthesize rz_minHeightConstraint = _rz_minHeightConstraint;
 @synthesize rz_maxHeightConstraint = _rz_maxHeightConstraint;
+
+#pragma mark - Class
+
++ (NSPredicate *)rz_minConstraintPredicate
+{
+    return [NSPredicate predicateWithFormat:@"%K == %@ AND %K == %@",
+            NSStringFromSelector(@selector(firstAttribute)), @(NSLayoutAttributeHeight),
+            NSStringFromSelector(@selector(relation)), @(NSLayoutRelationGreaterThanOrEqual)];
+}
+
++ (NSPredicate *)rz_maxConstraintPredicate
+{
+    return [NSPredicate predicateWithFormat:@"%K == %@ AND %K == %@",
+            NSStringFromSelector(@selector(firstAttribute)), @(NSLayoutAttributeHeight),
+            NSStringFromSelector(@selector(relation)), @(NSLayoutRelationLessThanOrEqual)];
+}
 
 #pragma mark - View Life Cycle
 
@@ -117,9 +137,10 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     if ( _heightPriority != heightPriority ) {
         _heightPriority = heightPriority;
 
-        [self rz_replacePinnedHeightConstraintWithNewPinnedHeight:self.intrinsicContentHeight priority:self.heightPriority];
+        [self rz_replacePinnedHeightConstraintWithNewPinnedHeight:self.rz_pinnedHeightConstraint.constant priority:self.heightPriority];
     }
 }
+
 - (void)setPlaceholder:(NSString *)placeholder
 {
     if ( ![_placeholder isEqualToString:placeholder] ) {
@@ -166,49 +187,6 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     self.placeholderLabel.font = font;
 }
 
-#pragma mark - Constraint Overrides
-
-- (void)addConstraint:(NSLayoutConstraint *)constraint
-{
-    // only concentrate on height constraints on us
-    if ( constraint.firstAttribute == NSLayoutAttributeHeight && constraint.firstItem == self ) {
-
-        // min constraint relation
-        if ( constraint.relation == NSLayoutRelationGreaterThanOrEqual ) {
-            // only set it if the new constaint consant is greater than the old constarint constant
-            if ( !_rz_minHeightConstraint || constraint.constant > _rz_minHeightConstraint.constant ) {
-                _rz_minHeightConstraint = constraint;
-            }
-        }
-
-        // max constraint relation
-        if ( constraint.relation == NSLayoutRelationLessThanOrEqual ) {
-            // only set it if the new constaint consant is less than the old constarint constant
-            if ( !_rz_maxHeightConstraint || constraint.constant < _rz_maxHeightConstraint.constant ) {
-                _rz_maxHeightConstraint = constraint;
-            }
-        }
-    }
-
-    
-    [super addConstraint:constraint];
-}
-
-// nil out min/max constraints on remove, so we can dynamically them next time
-// we try to access them.
-- (void)removeConstraint:(NSLayoutConstraint *)constraint
-{
-    if ( constraint == self.rz_minHeightConstraint ) {
-        _rz_minHeightConstraint = nil;
-    }
-
-    if ( constraint == self.rz_maxHeightConstraint ) {
-        _rz_maxHeightConstraint = nil;
-    }
-
-    [super removeConstraint:constraint];
-}
-
 #pragma mark - Getters
 
 - (NSLayoutConstraint *)rz_pinnedHeightConstraint
@@ -217,18 +195,21 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
     // create a height constraint if there isn't one created already
     if ( !rz_pinnedHeightConstraint ) {
-        rz_pinnedHeightConstraint = [self rz_pinHeightTo:self.intrinsicContentHeight priority:self.heightPriority];
+        rz_pinnedHeightConstraint = [self rz_pinHeightTo:0.0f priority:self.heightPriority];
     }
 
     return rz_pinnedHeightConstraint;
 }
 
-// min/max constraints need to be dynamic incase they externally get removed
-// however if more are added they are not taken into account, might want to change this in the future
+// we need these to be dynamic so we have to iterate through these each time we
+// have to look it up. So lookup the min/max sparingly
 - (NSLayoutConstraint *)rz_maxHeightConstraint
 {
-    if ( !_rz_maxHeightConstraint ) {
-        _rz_maxHeightConstraint = [self constraintForFirstAttribute:NSLayoutAttributeHeight relation:NSLayoutRelationLessThanOrEqual];
+    _rz_maxHeightConstraint = nil;
+    for (NSLayoutConstraint *constraint in [self.constraints filteredArrayUsingPredicate:[[self class] rz_maxConstraintPredicate]]) {
+        if( _rz_maxHeightConstraint == nil || constraint.constant < _rz_maxHeightConstraint.constant ) {
+            _rz_maxHeightConstraint = constraint;
+        }
     }
 
     return _rz_maxHeightConstraint;
@@ -236,8 +217,11 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 - (NSLayoutConstraint *)rz_minHeightConstraint
 {
-    if ( !_rz_minHeightConstraint ) {
-        _rz_minHeightConstraint = [self constraintForFirstAttribute:NSLayoutAttributeHeight relation:NSLayoutRelationGreaterThanOrEqual];
+    _rz_minHeightConstraint = nil;
+    for (NSLayoutConstraint *constraint in [self.constraints filteredArrayUsingPredicate:[[self class] rz_minConstraintPredicate]]) {
+            if ( _rz_minHeightConstraint == nil || constraint.constant > _rz_minHeightConstraint.constant ) {
+            _rz_minHeightConstraint = constraint;
+        }
     }
 
     return _rz_minHeightConstraint;
@@ -292,17 +276,21 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
                                                         CGFLOAT_MAX)];
     CGFloat newHeight = sizeThatFits.height;
 
+    // store the constraints to avoid extra lookups
+    NSLayoutConstraint *rz_maxHeightConstraint = self.rz_maxHeightConstraint;
+    NSLayoutConstraint *rz_minHeightConstraint = self.rz_minHeightConstraint;
+
     // Consider the min/max height constraints when calculating the height
-    if ( self.rz_maxHeightConstraint ) {
-        newHeight = fminf(newHeight, self.rz_maxHeightConstraint.constant);
+    if ( rz_maxHeightConstraint ) {
+        newHeight = fminf(newHeight, rz_maxHeightConstraint.constant);
     }
 
-    if ( self.rz_minHeightConstraint ) {
-        newHeight = fmaxf(newHeight, self.rz_minHeightConstraint.constant);
+    if ( rz_minHeightConstraint ) {
+        newHeight = fmaxf(newHeight, rz_minHeightConstraint.constant);
     }
 
     // at the very least we want it the size of the font plus insets
-    CGFloat minimum = fminf(self.textContainerInset.top + self.textContainerInset.bottom + self.font.lineHeight, self.rz_maxHeightConstraint.constant);
+    CGFloat minimum = fminf(self.textContainerInset.top + self.textContainerInset.bottom + self.font.lineHeight, rz_maxHeightConstraint.constant);
 
     return fmaxf(newHeight, minimum);
 }
@@ -413,19 +401,6 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 - (void)scrollToBottom
 {
     [self setContentOffset:self.bottomOffset animated:NO];
-}
-
-#pragma mark - Private
-
-- (NSLayoutConstraint *)constraintForFirstAttribute:(NSLayoutAttribute)attribute relation:(NSLayoutRelation)relation
-{
-    for (NSLayoutConstraint *constraint in self.constraints) {
-        if ( constraint.firstAttribute == attribute && constraint.relation  == relation ) {
-            return constraint;
-        }
-    }
-    
-    return nil;
 }
 
 @end

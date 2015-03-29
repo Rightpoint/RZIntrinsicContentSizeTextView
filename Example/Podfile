@@ -1,12 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'RZIntrinsicContentSizeTextView', :exclusive => true do
-  pod "RZIntrinsicContentSizeTextView", :path => "../"
+  pod 'RZIntrinsicContentSizeTextView', :path => '../'
   pod 'RZUtils/Categories/UIView'
 end
 
 target 'Tests', :exclusive => true do
-  pod "RZIntrinsicContentSizeTextView", :path => "../"
-
-  
+  pod 'RZIntrinsicContentSizeTextView', :path => '../'
+  pod 'FRY'
 end
