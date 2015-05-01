@@ -31,20 +31,20 @@
 
 @implementation UIView (RZAutoLayoutReplacementHelpers)
 
-- (NSLayoutConstraint *)rz_replacePinnedHeightConstraintWithNewPinnedHeight:(CGFloat)height
+- (NSLayoutConstraint *)rztv_replacePinnedHeightConstraintWithNewPinnedHeight:(CGFloat)height
 {
-    return [self rz_replacePinnedHeightConstraintWithNewPinnedHeight:height priority:nanf(NULL)];
+    return [self rztv_replacePinnedHeightConstraintWithNewPinnedHeight:height priority:nanf(NULL)];
 }
 
-- (NSLayoutConstraint *)rz_replacePinnedHeightConstraintWithNewPinnedHeight:(CGFloat)height priority:(CGFloat)priority
+- (NSLayoutConstraint *)rztv_replacePinnedHeightConstraintWithNewPinnedHeight:(CGFloat)height priority:(CGFloat)priority
 {
-    NSLayoutConstraint *rz_pinnedHeightConstraint = self.rz_pinnedHeightConstraint;
+    NSLayoutConstraint *rztv_pinnedHeightConstraint = self.rztv_pinnedHeightConstraint;
 
-    if ( rz_pinnedHeightConstraint ) {
-        [self removeConstraint:rz_pinnedHeightConstraint];
+    if ( rztv_pinnedHeightConstraint ) {
+        [self removeConstraint:rztv_pinnedHeightConstraint];
     }
 
-    return [self rz_pinHeightTo:height priority:priority];
+    return [self rztv_pinHeightTo:height priority:priority];
     
 }
 

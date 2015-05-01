@@ -39,8 +39,8 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 @property (strong, nonatomic, readwrite) UILabel *placeholderLabel;
 
 // Semi-Dynamic Min/Max constraints
-@property (weak, nonatomic, readonly) NSLayoutConstraint *rz_minHeightConstraint;
-@property (weak, nonatomic, readonly) NSLayoutConstraint *rz_maxHeightConstraint;
+@property (weak, nonatomic, readonly) NSLayoutConstraint *rztv_minHeightConstraint;
+@property (weak, nonatomic, readonly) NSLayoutConstraint *rztv_maxHeightConstraint;
 
 // Size Helpers
 - (CGFloat)intrinsicContentHeight;
@@ -89,7 +89,7 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     XCTAssertNil(self.textView.sizeChangeDelegate, @"Size change delegate should be nil");
     XCTAssertNil(self.textView.delegate, @"Size change delegate should be nil");
     XCTAssertEqual(self.textView.heightPriority, kRZTextViewDefaultHeightPriority, @"Height priority should be equal to kRZTextViewDefaultHeightPriority");
-    XCTAssertEqual(self.textView.heightPriority, self.textView.rz_pinnedHeightConstraint.priority, @"Height priority should be equal to the textview's height constraint priority");
+    XCTAssertEqual(self.textView.heightPriority, self.textView.rztv_pinnedHeightConstraint.priority, @"Height priority should be equal to the textview's height constraint priority");
 
     // actual view values vs expected
     XCTAssertEqual(self.textView.text.length, 0, @"There shouldn't be text in the textView");
@@ -99,8 +99,8 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     XCTAssertTrue(self.textView.shouldAnimateSizeChange, @"Should animate size change by default");
 
     // constraint
-    XCTAssertNotNil(self.textView.rz_pinnedHeightConstraint, @"Height constraint should NEVER be nil");
-    XCTAssertEqual(self.textView.rz_pinnedHeightConstraint.priority, kRZTextViewDefaultHeightPriority, @"Height constraint should have a 999.0f priority");
+    XCTAssertNotNil(self.textView.rztv_pinnedHeightConstraint, @"Height constraint should NEVER be nil");
+    XCTAssertEqual(self.textView.rztv_pinnedHeightConstraint.priority, kRZTextViewDefaultHeightPriority, @"Height constraint should have a 999.0f priority");
     PLACEHOLDER_SHOWING_TEST;
 }
 
@@ -132,7 +132,7 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
                                                           multiplier:1.0f
                                                             constant:kRZMinHeight];
     [self.textView addConstraint:min];
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, min, @"The minimum constraint we just added should be the same as the one we find in the textview");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, min, @"The minimum constraint we just added should be the same as the one we find in the textview");
 
     // Only min
     XCTAssertEqual(self.textView.intrinsicContentHeight, min.constant, @"Textview should be set to the minimum constraint");
@@ -153,7 +153,7 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
                                                           multiplier:1.0f
                                                             constant:kRZMaxHeight];
     [self.textView addConstraint:max];
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint, max, @"The maximum constraint we just added should be the same as the one we find in the textview");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint, max, @"The maximum constraint we just added should be the same as the one we find in the textview");
 
     // Only max
     self.textView.text = nil;
@@ -175,14 +175,14 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 - (void)testHeightPriority
 {
     XCTAssertEqual(self.textView.heightPriority, kRZTextViewDefaultHeightPriority, @"Height priority should be equal to the textview's height constraint priority");
-    XCTAssertEqual(self.textView.rz_pinnedHeightConstraint.priority, kRZTextViewDefaultHeightPriority, @"Pinned Height priority should be equal to the textview's height constraint priority");
-    XCTAssertEqual(self.textView.heightPriority, self.textView.rz_pinnedHeightConstraint.priority, @"Height priority should be equal to the textview's height constraint priority");
+    XCTAssertEqual(self.textView.rztv_pinnedHeightConstraint.priority, kRZTextViewDefaultHeightPriority, @"Pinned Height priority should be equal to the textview's height constraint priority");
+    XCTAssertEqual(self.textView.heightPriority, self.textView.rztv_pinnedHeightConstraint.priority, @"Height priority should be equal to the textview's height constraint priority");
 
     self.textView.heightPriority = UILayoutPriorityDefaultLow;
 
     XCTAssertEqual(self.textView.heightPriority, UILayoutPriorityDefaultLow, @"Height priority should be low");
-    XCTAssertEqual(self.textView.rz_pinnedHeightConstraint.priority, UILayoutPriorityDefaultLow, @"Pinned Height priority should be low");
-    XCTAssertEqual(self.textView.heightPriority, self.textView.rz_pinnedHeightConstraint.priority, @"Pinned height constraint priority should same as height priority");
+    XCTAssertEqual(self.textView.rztv_pinnedHeightConstraint.priority, UILayoutPriorityDefaultLow, @"Pinned Height priority should be low");
+    XCTAssertEqual(self.textView.heightPriority, self.textView.rztv_pinnedHeightConstraint.priority, @"Pinned height constraint priority should same as height priority");
 }
 
 - (void)testPlaceholder
@@ -232,8 +232,8 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 - (void)testRemoveConstraint
 {
-    XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
-    XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
 
     NSLayoutConstraint *minConstraint = [NSLayoutConstraint constraintWithItem:self.textView
                                                                      attribute:NSLayoutAttributeHeight
@@ -253,20 +253,20 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
     [self.textView addConstraints:@[minConstraint, maxConstraint]];
 
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint, @"Min constraint should have been set");
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint, maxConstraint, @"Max constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, minConstraint, @"Min constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint, maxConstraint, @"Max constraint should have been set");
 
     [self.textView removeConstraint:minConstraint];
-    XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint should be niled");
+    XCTAssertNil(self.textView.rztv_minHeightConstraint, @"Min height constraint should be niled");
 
     [self.textView removeConstraint:maxConstraint];
-    XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint should be niled");
+    XCTAssertNil(self.textView.rztv_maxHeightConstraint, @"Max height constraint should be niled");
 }
 
 - (void)testRemoveConstraints
 {
-    XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
-    XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
 
     NSLayoutConstraint *minConstraint = [NSLayoutConstraint constraintWithItem:self.textView
                                                                      attribute:NSLayoutAttributeHeight
@@ -286,17 +286,17 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
     [self.textView addConstraints:@[minConstraint, maxConstraint]];
 
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint, @"Min constraint should have been set");
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint, maxConstraint, @"Max constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, minConstraint, @"Min constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint, maxConstraint, @"Max constraint should have been set");
 
     [self.textView removeConstraints:@[minConstraint, maxConstraint]];
-    XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint should be niled");
-    XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint should be niled");
+    XCTAssertNil(self.textView.rztv_minHeightConstraint, @"Min height constraint should be niled");
+    XCTAssertNil(self.textView.rztv_maxHeightConstraint, @"Max height constraint should be niled");
 }
 
 - (void)testAddMinConstraint
 {
-    XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
 
     // Make sure it gets the ACTUAL min constraint
     NSLayoutConstraint *minConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
@@ -316,19 +316,19 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
                                                                        constant:kRZMaxHeight];
 
     [self.textView addConstraint:minConstraint1];
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint1, @"Min constraint should have been set");
-    XCTAssertEqual(self.textView.rz_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, minConstraint1, @"Min constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMinHeight, @"intrinsicContentHeight should be kRZMinHeight");
 
     [self.textView addConstraint:minConstraint2];
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint2, @"Min constraint should have been reset");
-    XCTAssertEqual(self.textView.rz_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, minConstraint2, @"Min constraint should have been reset");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMaxHeight, @"intrinsicContentHeight should be kRZMaxHeight");
 }
 
 - (void)testAddMaxConstraint
 {
-    XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
 
     // Make sure it gets the ACTUAL max constraint
     NSLayoutConstraint *maxConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
@@ -351,19 +351,19 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     self.textView.text = kRZLongText;
 
     [self.textView addConstraint:maxConstraint2];
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint, maxConstraint2, @"Max constraint should have been reset");
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint, maxConstraint2, @"Max constraint should have been reset");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMaxHeight, @"intrinsicContentHeight should be kRZMaxHeight");
 
     [self.textView addConstraint:maxConstraint1];
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint, maxConstraint1, @"Max constraint should have been set");
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint.constant, self.textView.intrinsicContentHeight, @"maxHeigh should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint, maxConstraint1, @"Max constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint.constant, self.textView.intrinsicContentHeight, @"maxHeigh should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMinHeight, @"intrinsicContentHeight should be kRZMinHeight");
 }
 
 - (void)testAddMinConstraints
 {
-    XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
 
     // Make sure it gets the ACTUAL min constraint
     NSLayoutConstraint *minConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
@@ -399,19 +399,19 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
                                                                        constant:kRZMidHeight];
 
     [self.textView addConstraints:@[minConstraint1, minConstraint2]];
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint2, @"Min constraint should have been set");
-    XCTAssertEqual(self.textView.rz_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, minConstraint2, @"Min constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMinHeight, @"intrinsicContentHeight should be kRZMinHeight");
 
     [self.textView addConstraints:@[minConstraint3, minConstraint4]];
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint3, @"Min constraint should have been reset");
-    XCTAssertEqual(self.textView.rz_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, minConstraint3, @"Min constraint should have been reset");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMaxHeight, @"intrinsicContentHeight should be kRZMaxHeight");
 }
 
 - (void)testAddMaxConstraints
 {
-    XCTAssertNil(self.textView.rz_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_maxHeightConstraint, @"Max height constraint shoulnd't have been set yet");
 
     NSLayoutConstraint *maxConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
                                                                       attribute:NSLayoutAttributeHeight
@@ -449,19 +449,19 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     self.textView.text = kRZLongText;
 
     [self.textView addConstraints:@[maxConstraint1, maxConstraint2]];
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint, maxConstraint2, @"Max constraint should have been set");
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint.constant, self.textView.intrinsicContentHeight, @"MaxHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint, maxConstraint2, @"Max constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint.constant, self.textView.intrinsicContentHeight, @"MaxHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMidHeight, @"intrinsicContentHeight should be kRZMinHeight");
 
     [self.textView addConstraints:@[maxConstraint3, maxConstraint4]];
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint, maxConstraint3, @"Max constraint should have been reset");
-    XCTAssertEqual(self.textView.rz_maxHeightConstraint.constant, self.textView.intrinsicContentHeight, @"maxHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint, maxConstraint3, @"Max constraint should have been reset");
+    XCTAssertEqual(self.textView.rztv_maxHeightConstraint.constant, self.textView.intrinsicContentHeight, @"maxHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZNoHeight, @"intrinsicContentHeight should be kRZMaxHeight");
 }
 
 - (void)testActiveDeactiveConstraints
 {
-    XCTAssertNil(self.textView.rz_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
+    XCTAssertNil(self.textView.rztv_minHeightConstraint, @"Min height constraint shoulnd't have been set yet");
 
     // Make sure it gets the ACTUAL min constraint
     NSLayoutConstraint *minConstraint1 = [NSLayoutConstraint constraintWithItem:self.textView
@@ -481,13 +481,13 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
                                                                        constant:kRZMaxHeight];
 
     minConstraint1.active = YES;
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint1, @"Min constraint should have been set");
-    XCTAssertEqual(self.textView.rz_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, minConstraint1, @"Min constraint should have been set");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMinHeight, @"intrinsicContentHeight should be kRZMinHeight");
 
     minConstraint2.active = YES;
-    XCTAssertEqual(self.textView.rz_minHeightConstraint, minConstraint2, @"Min constraint should have been reset");
-    XCTAssertEqual(self.textView.rz_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint, minConstraint2, @"Min constraint should have been reset");
+    XCTAssertEqual(self.textView.rztv_minHeightConstraint.constant, self.textView.intrinsicContentHeight, @"minHeight should be intrisicHeight");
     XCTAssertEqual(self.textView.intrinsicContentHeight, kRZMaxHeight, @"intrinsicContentHeight should be kRZMaxHeight");
 }
 

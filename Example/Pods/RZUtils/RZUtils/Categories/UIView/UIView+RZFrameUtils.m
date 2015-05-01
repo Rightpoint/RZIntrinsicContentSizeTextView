@@ -31,72 +31,72 @@
 
 @implementation UIView (RZFrameUtils)
 
-- (void)rz_setFrameOriginX:(CGFloat)originX
+- (void)rztv_setFrameOriginX:(CGFloat)originX
 {
-    [self rz_setFrameOriginX:originX lockRight:NO];
+    [self rztv_setFrameOriginX:originX lockRight:NO];
 }
 
-- (void)rz_setFrameOriginX:(CGFloat)originX lockRight:(BOOL)lockRight
+- (void)rztv_setFrameOriginX:(CGFloat)originX lockRight:(BOOL)lockRight
 {
     CGFloat rightEdge = CGRectGetMaxX(self.frame);
-    [self rz_setFrameOrigin:CGPointMake(originX, self.frame.origin.y)];
+    [self rztv_setFrameOrigin:CGPointMake(originX, self.frame.origin.y)];
     if (lockRight){
-        [self rz_setFrameWidth:rightEdge - originX];
+        [self rztv_setFrameWidth:rightEdge - originX];
     }
 }
 
-- (void)rz_setFrameOriginY:(CGFloat)originY
+- (void)rztv_setFrameOriginY:(CGFloat)originY
 {
-    [self rz_setFrameOriginY:originY lockBottom:NO];
+    [self rztv_setFrameOriginY:originY lockBottom:NO];
 }
 
-- (void)rz_setFrameOriginY:(CGFloat)originY lockBottom:(BOOL)lockBottom
+- (void)rztv_setFrameOriginY:(CGFloat)originY lockBottom:(BOOL)lockBottom
 {
     CGFloat bottomEdge = CGRectGetMaxY(self.frame);
-    [self rz_setFrameOrigin:CGPointMake(self.frame.origin.x, originY)];
+    [self rztv_setFrameOrigin:CGPointMake(self.frame.origin.x, originY)];
     if (lockBottom)
     {
-        [self rz_setFrameHeight:bottomEdge - originY];
+        [self rztv_setFrameHeight:bottomEdge - originY];
     }
 }
 
-- (void)rz_setFrameOrigin:(CGPoint)point
+- (void)rztv_setFrameOrigin:(CGPoint)point
 {
     CGRect frame = self.frame;
     frame.origin = point;
     self.frame = frame;
 }
 
-- (void)rz_setFrameWidth:(CGFloat)width
+- (void)rztv_setFrameWidth:(CGFloat)width
 {
-    [self rz_setFrameWidth:width alignRight:NO];
+    [self rztv_setFrameWidth:width alignRight:NO];
 }
 
-- (void)rz_setFrameWidth:(CGFloat)width alignRight:(BOOL)alignRight
+- (void)rztv_setFrameWidth:(CGFloat)width alignRight:(BOOL)alignRight
 {
     if (alignRight){
         CGFloat rightX = CGRectGetMaxX(self.frame);
-        [self rz_setFrameSize:CGSizeMake(width, self.frame.size.height)];
-        [self rz_setFrameOriginX:rightX-width];
+        [self rztv_setFrameSize:CGSizeMake(width, self.frame.size.height)];
+        [self rztv_setFrameOriginX:rightX-width];
     }
     else{
-        [self rz_setFrameSize:CGSizeMake(width, self.frame.size.height)];
+        [self rztv_setFrameSize:CGSizeMake(width, self.frame.size.height)];
     }
 }
 
-- (void)rz_setFrameHeight:(CGFloat)height
+- (void)rztv_setFrameHeight:(CGFloat)height
 {
-    [self rz_setFrameSize:CGSizeMake(self.frame.size.width, height)];
+    [self rztv_setFrameSize:CGSizeMake(self.frame.size.width, height)];
 }
 
-- (void)rz_setFrameSize:(CGSize)size
+- (void)rztv_setFrameSize:(CGSize)size
 {
     CGRect frame = self.frame;
     frame.size = size;
     self.frame = frame;
 }
 
-- (void)rz_nudgeFrameOriginX:(CGFloat)nx originY:(CGFloat)ny width:(CGFloat)nw height:(CGFloat)nh
+- (void)rztv_nudgeFrameOriginX:(CGFloat)nx originY:(CGFloat)ny width:(CGFloat)nw height:(CGFloat)nh
 {
     CGRect frame = self.frame;
     frame.origin.x += nx;
@@ -106,7 +106,7 @@
     self.frame = frame;
 }
 
-- (void)rz_moveFrameToTheRightOf:(CGRect)leftFrame withPadding:(int)padding
+- (void)rztv_moveFrameToTheRightOf:(CGRect)leftFrame withPadding:(int)padding
 {
     self.frame = CGRectMake(leftFrame.origin.x + leftFrame.size.width + padding,
                       self.frame.origin.y,

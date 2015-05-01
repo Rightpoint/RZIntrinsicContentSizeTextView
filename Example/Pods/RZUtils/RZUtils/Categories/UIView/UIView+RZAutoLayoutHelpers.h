@@ -47,7 +47,7 @@
  *
  *  @return The common ancestor.
  */
-+ (UIView *)rz_commonAncestorForViews:(NSArray *)views;
++ (UIView *)rztv_commonAncestorForViews:(NSArray *)views;
 
 /** @name Constraint Getters */
 
@@ -56,56 +56,56 @@
  *
  *  @return The constraint or nil.
  */
-- (NSLayoutConstraint*)rz_pinnedWidthConstraint;
+- (NSLayoutConstraint*)rztv_pinnedWidthConstraint;
 
 /**
  *  Return the receiver's pinned height constraint, if it exsists.
  *
  *  @return The constraint or nil.
  */
-- (NSLayoutConstraint*)rz_pinnedHeightConstraint;
+- (NSLayoutConstraint*)rztv_pinnedHeightConstraint;
 
 /**
  *  Return the receiver's pinned top constraint, if it exsists.
  *
  *  @return The constraint or nil.
  */
-- (NSLayoutConstraint*)rz_pinnedTopConstraint;
+- (NSLayoutConstraint*)rztv_pinnedTopConstraint;
 
 /**
  *  Return the receiver's pinned left side constraint, if it exsists.
  *
  *  @return The constraint or nil.
  */
-- (NSLayoutConstraint*)rz_pinnedLeftConstraint;
+- (NSLayoutConstraint*)rztv_pinnedLeftConstraint;
 
 /**
  *  Return the receiver's pinned right side constraint, if it exsists.
  *
  *  @return The constraint or nil.
  */
-- (NSLayoutConstraint*)rz_pinnedRightConstraint;
+- (NSLayoutConstraint*)rztv_pinnedRightConstraint;
 
 /**
  *  Return the receiver's pinned bottom constraint, if it exsists.
  *
  *  @return The constraint or nil.
  */
-- (NSLayoutConstraint*)rz_pinnedBottomConstraint;
+- (NSLayoutConstraint*)rztv_pinnedBottomConstraint;
 
 /**
  *  Return the receiver's pinned center X constraint, if it exsists.
  *
  *  @return The constraint or nil.
  */
-- (NSLayoutConstraint*)rz_pinnedCenterXConstraint;
+- (NSLayoutConstraint*)rztv_pinnedCenterXConstraint;
 
 /**
  *  Return the receiver's pinned center Y constraint, if it exsists.
  *
  *  @return The constraint or nil.
  */
-- (NSLayoutConstraint*)rz_pinnedCenterYConstraint;
+- (NSLayoutConstraint*)rztv_pinnedCenterYConstraint;
 
 /** @name Constraint Creation */
 
@@ -116,7 +116,7 @@
  *
  *  @return The pinned width constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinWidthTo:(CGFloat)width;
+- (NSLayoutConstraint *)rztv_pinWidthTo:(CGFloat)width;
 
 /**
  *  Pin the receiver's width to the width of another view.
@@ -125,7 +125,7 @@
  *
  *  @return The pinned width constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinWidthToView:(UIView *)view;
+- (NSLayoutConstraint *)rztv_pinWidthToView:(UIView *)view;
 
 /**
  *  Pin the receiver's width to the width of another view with a particular multiplier.
@@ -137,7 +137,7 @@
  *
  *  @return The pinned width constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinWidthToView:(UIView *)view multiplier:(CGFloat)multiplier;
+- (NSLayoutConstraint *)rztv_pinWidthToView:(UIView *)view multiplier:(CGFloat)multiplier;
 
 /**
  *  Pin the receiver's width to a constant.
@@ -146,7 +146,7 @@
  *
  *  @return The pinned height constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinHeightTo:(CGFloat)height;
+- (NSLayoutConstraint *)rztv_pinHeightTo:(CGFloat)height;
 
 /**
  *  Pin the receiver's height to the height of another view.
@@ -155,7 +155,7 @@
  *
  *  @return The pinned height constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinHeightToView:(UIView *)view;
+- (NSLayoutConstraint *)rztv_pinHeightToView:(UIView *)view;
 
 /**
  *  Pin the receiver's height to the height of another view with a particular multiplier.
@@ -167,7 +167,7 @@
  *
  *  @return The pinned height constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinHeightToView:(UIView *)view multiplier:(CGFloat)multiplier;
+- (NSLayoutConstraint *)rztv_pinHeightToView:(UIView *)view multiplier:(CGFloat)multiplier;
 
 /**
  *  Pin the receiver's size to a particular value.
@@ -176,7 +176,7 @@
  *
  *  @return The constraints that were added: [width, height].
  */
-- (NSArray *)rz_pinSizeTo:(CGSize)size;
+- (NSArray *)rztv_pinSizeTo:(CGSize)size;
 
 /**
  *  Pin the receiver's top space to its superview's top with a fixed amount of padding.
@@ -187,7 +187,7 @@
  *
  *  @return The constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinTopSpaceToSuperviewWithPadding:(CGFloat)padding;
+- (NSLayoutConstraint *)rztv_pinTopSpaceToSuperviewWithPadding:(CGFloat)padding;
 
 /**
  *  Pin the receiver's left space to its superview's left side with a fixed amount of padding.
@@ -198,7 +198,7 @@
  *
  *  @return The constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinLeftSpaceToSuperviewWithPadding:(CGFloat)padding;
+- (NSLayoutConstraint *)rztv_pinLeftSpaceToSuperviewWithPadding:(CGFloat)padding;
 
 /**
  *  Pin the receiver's bottom space to its superview's bottom with a fixed amount of padding.
@@ -209,7 +209,7 @@
  *
  *  @return The constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinBottomSpaceToSuperviewWithPadding:(CGFloat)padding;
+- (NSLayoutConstraint *)rztv_pinBottomSpaceToSuperviewWithPadding:(CGFloat)padding;
 
 /**
  *  Pin the receiver's right space to its superview's right side with a fixed amount of padding.
@@ -220,7 +220,7 @@
  *
  *  @return The constraint that was added.
  */
-- (NSLayoutConstraint *)rz_pinRightSpaceToSuperviewWithPadding:(CGFloat)padding;
+- (NSLayoutConstraint *)rztv_pinRightSpaceToSuperviewWithPadding:(CGFloat)padding;
 
 /**
  *  Pin all sides of the receiver to its superview's sides with fixed insets.
@@ -231,7 +231,7 @@
  *
  *  @return The constraints that were added: [top, left, bottom, right]
  */
-- (NSArray *)rz_fillContainerWithInsets:(UIEdgeInsets)insets;
+- (NSArray *)rztv_fillContainerWithInsets:(UIEdgeInsets)insets;
 
 /**
  *  Make the receiver fill its superview horizontally with a fixed amount of padding.
@@ -243,7 +243,7 @@
  *
  *  @return The constraints that were added: [left, right]
  */
-- (NSArray *)rz_fillContainerHorizontallyWithPadding:(CGFloat)padding;
+- (NSArray *)rztv_fillContainerHorizontallyWithPadding:(CGFloat)padding;
 
 /**
  *  Make the receiver fill its superview horizontally with a minimum amount of padding.
@@ -255,7 +255,7 @@
  *
  *  @return The constraints that were added: [left, right]
  */
-- (NSArray *)rz_fillContainerHorizontallyWithMinimumPadding:(CGFloat)padding;
+- (NSArray *)rztv_fillContainerHorizontallyWithMinimumPadding:(CGFloat)padding;
 
 /**
  *  Make the receiver fill its superview vertically with a fixed amount of padding.
@@ -267,7 +267,7 @@
  *
  *  @return The constraints that were added: [top, bottom]
  */
-- (NSArray *)rz_fillContainerVerticallyWithPadding:(CGFloat)padding;
+- (NSArray *)rztv_fillContainerVerticallyWithPadding:(CGFloat)padding;
 
 /**
  *  Make the receiver fill its superview vertically with a fixed amount of padding.
@@ -279,7 +279,7 @@
  *
  *  @return The constraints that were added: [top, bottom]
  */
-- (NSArray *)rz_fillContainerVerticallyWithMinimumPadding:(CGFloat)padding;
+- (NSArray *)rztv_fillContainerVerticallyWithMinimumPadding:(CGFloat)padding;
 
 /**
  *  Center the receiver horizontally in its superview.
@@ -288,7 +288,7 @@
  *
  *  @return The constraint that was added.
  */
-- (NSLayoutConstraint *)rz_centerHorizontallyInContainer;
+- (NSLayoutConstraint *)rztv_centerHorizontallyInContainer;
 
 /**
  *  Center the receiver horizontally in its superview with an offset.
@@ -299,7 +299,7 @@
  *
  *  @return The constraint that was added.
  */
-- (NSLayoutConstraint *)rz_centerHorizontallyInContainerWithOffset:(CGFloat)offset;
+- (NSLayoutConstraint *)rztv_centerHorizontallyInContainerWithOffset:(CGFloat)offset;
 
 /**
  *  Center the receiver vertically in its superview.
@@ -308,7 +308,7 @@
  *
  *  @return The constraint that was added.
  */
-- (NSLayoutConstraint *)rz_centerVerticallyInContainer;
+- (NSLayoutConstraint *)rztv_centerVerticallyInContainer;
 
 /**
  *  Center the receiver vertically in its superview with an offset.
@@ -319,7 +319,7 @@
  *
  *  @return The constraint that was added.
  */
-- (NSLayoutConstraint *)rz_centerVerticallyInContainerWithOffset:(CGFloat)offset;
+- (NSLayoutConstraint *)rztv_centerVerticallyInContainerWithOffset:(CGFloat)offset;
 
 
 /** @name Batch Alignment */
@@ -327,7 +327,7 @@
 /**
  *  Create a vertical or horizontal minimum space constraint between each adjacent pair of views in an array. 
  *
- *  @warning This method is deprecated in favor of @c rz_spaceSubViews:vertically:itemSpacing:relation:
+ *  @warning This method is deprecated in favor of @c rztv_spaceSubViews:vertically:itemSpacing:relation:
  *
  *  @param subviews    The array of views to space. The order of the array should reflect their spatial order.
  *  @param vertically  @c YES if the spaces should exist between views' top and bottom edges, @c NO if between left and right edges.
@@ -335,7 +335,7 @@
  *
  *  @return An array of the constraints that were added.
  */
-- (NSArray *)rz_spaceSubviews:(NSArray *)subviews vertically:(BOOL)vertically minimumItemSpacing:(CGFloat)itemSpacing __attribute__((deprecated("Use rz_spaceSubViews:vertically:itemSpacing:relation: instead.")));
+- (NSArray *)rztv_spaceSubviews:(NSArray *)subviews vertically:(BOOL)vertically minimumItemSpacing:(CGFloat)itemSpacing __attribute__((deprecated("Use rztv_spaceSubViews:vertically:itemSpacing:relation: instead.")));
 
 /**
  *  Create a vertical or horizontal space constraint between each adjacent pair of views in an array.
@@ -347,7 +347,7 @@
  *
  *  @return An array of the constraints that were added.
  */
-- (NSArray *)rz_spaceSubviews:(NSArray *)subviews vertically:(BOOL)vertically itemSpacing:(CGFloat)itemSpacing relation:(NSLayoutRelation)relation;
+- (NSArray *)rztv_spaceSubviews:(NSArray *)subviews vertically:(BOOL)vertically itemSpacing:(CGFloat)itemSpacing relation:(NSLayoutRelation)relation;
 
 /**
  *  Distribute views vertically or horizontally along the same axis with equal spacing in the receiver.
@@ -357,7 +357,7 @@
  *
  *  @return An array of the constraints that were added.
  */
-- (NSArray *)rz_distributeSubviews:(NSArray *)subviews vertically:(BOOL)vertically;
+- (NSArray *)rztv_distributeSubviews:(NSArray *)subviews vertically:(BOOL)vertically;
 
 /**
  *  Align views within the receiver by a particular attribute.
@@ -367,6 +367,6 @@
  *
  *  @return An array of constraints that were added.
  */
-- (NSArray *)rz_alignSubviews:(NSArray *)subviews byAttribute:(NSLayoutAttribute)attribute;
+- (NSArray *)rztv_alignSubviews:(NSArray *)subviews byAttribute:(NSLayoutAttribute)attribute;
 
 @end

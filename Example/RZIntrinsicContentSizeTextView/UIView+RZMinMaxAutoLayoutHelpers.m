@@ -10,7 +10,7 @@
 
 @implementation UIView (RZMinMaxAutoLayoutHelpers)
 
-- (NSLayoutConstraint *)rz_pinnedMinHeightConstraint
+- (NSLayoutConstraint *)rztv_pinnedMinHeightConstraint
 {
     __block NSLayoutConstraint *constraint = nil;
     [self.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *c, NSUInteger idx, BOOL *stop) {
@@ -26,7 +26,7 @@
     return constraint;
 }
 
-- (NSLayoutConstraint *)rz_pinnedMaxHeightConstraint
+- (NSLayoutConstraint *)rztv_pinnedMaxHeightConstraint
 {
     __block NSLayoutConstraint *constraint = nil;
     [self.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *c, NSUInteger idx, BOOL *stop) {
@@ -42,7 +42,7 @@
     return constraint;
 }
 
-- (NSLayoutConstraint *)rz_pinMinHeightTo:(CGFloat)height
+- (NSLayoutConstraint *)rztv_pinMinHeightTo:(CGFloat)height
 {
     NSLayoutConstraint *h = [NSLayoutConstraint constraintWithItem:self
                                                          attribute:NSLayoutAttributeHeight
@@ -56,7 +56,7 @@
     return h;
 }
 
-- (NSLayoutConstraint *)rz_pinMaxHeightTo:(CGFloat)height
+- (NSLayoutConstraint *)rztv_pinMaxHeightTo:(CGFloat)height
 {
     NSLayoutConstraint *h = [NSLayoutConstraint constraintWithItem:self
                                                          attribute:NSLayoutAttributeHeight

@@ -11,11 +11,11 @@
 @interface UIView (RZMinMaxAutoLayoutHelpers)
 
 // getters
-- (NSLayoutConstraint *)rz_pinnedMinHeightConstraint;
-- (NSLayoutConstraint *)rz_pinnedMaxHeightConstraint;
+- (NSLayoutConstraint *)rztv_pinnedMinHeightConstraint;
+- (NSLayoutConstraint *)rztv_pinnedMaxHeightConstraint;
 
 // generators
-- (NSLayoutConstraint *)rz_pinMinHeightTo:(CGFloat)height;
-- (NSLayoutConstraint *)rz_pinMaxHeightTo:(CGFloat)height;
+- (NSLayoutConstraint *)rztv_pinMinHeightTo:(CGFloat)height;
+- (NSLayoutConstraint *)rztv_pinMaxHeightTo:(CGFloat)height;
 
 @end

@@ -59,12 +59,12 @@ static char kRZBorderViewKey;
 
 @implementation UIView (RZBorders)
 
-- (RZBorderedImageView *)rz_borderImgView
+- (RZBorderedImageView *)rztv_borderImgView
 {
     return objc_getAssociatedObject(self, &kRZBorderViewKey);
 }
 
-- (void)rz_addBordersWithMask:(RZViewBorderMask)mask width:(CGFloat)borderWidth color:(UIColor *)color
+- (void)rztv_addBordersWithMask:(RZViewBorderMask)mask width:(CGFloat)borderWidth color:(UIColor *)color
 {
     RZBorderedImageView *imgView = objc_getAssociatedObject(self, &kRZBorderViewKey);
     if (imgView == nil)
@@ -81,7 +81,7 @@ static char kRZBorderViewKey;
     imgView.opaque = NO;
 }
 
-- (void)rz_addBordersWithCornerRadius:(CGFloat)radius width:(CGFloat)borderWidth color:(UIColor *)color
+- (void)rztv_addBordersWithCornerRadius:(CGFloat)radius width:(CGFloat)borderWidth color:(UIColor *)color
 {
     RZBorderedImageView *imgView = objc_getAssociatedObject(self, &kRZBorderViewKey);
     if (imgView == nil)
@@ -97,7 +97,7 @@ static char kRZBorderViewKey;
     imgView.opaque = NO;
 }
 
-- (void)rz_removeBorders
+- (void)rztv_removeBorders
 {
     RZBorderedImageView *imgView = objc_getAssociatedObject(self, &kRZBorderViewKey);
     if (imgView)

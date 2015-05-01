@@ -31,6 +31,6 @@
 
 @interface UIView (RZAutoLayoutReplacementHelpers)
 
-- (NSLayoutConstraint *)rz_replacePinnedHeightConstraintWithNewPinnedHeight:(CGFloat)height priority:(CGFloat)priority;
+- (NSLayoutConstraint *)rztv_replacePinnedHeightConstraintWithNewPinnedHeight:(CGFloat)height priority:(CGFloat)priority;
 
 @end

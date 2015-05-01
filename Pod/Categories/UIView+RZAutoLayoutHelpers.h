@@ -30,17 +30,17 @@
 @interface UIView (RZAutoLayoutHelpers)
 
 // getters
-- (NSLayoutConstraint*)rz_pinnedHeightConstraint;
-- (NSLayoutConstraint*)rz_pinnedTopConstraint;
-- (NSLayoutConstraint*)rz_pinnedLeftConstraint;
-- (NSLayoutConstraint*)rz_pinnedRightConstraint;
-- (NSLayoutConstraint*)rz_pinnedBottomConstraint;
+- (NSLayoutConstraint*)rztv_pinnedHeightConstraint;
+- (NSLayoutConstraint*)rztv_pinnedTopConstraint;
+- (NSLayoutConstraint*)rztv_pinnedLeftConstraint;
+- (NSLayoutConstraint*)rztv_pinnedRightConstraint;
+- (NSLayoutConstraint*)rztv_pinnedBottomConstraint;
 
 // setters
-- (NSLayoutConstraint *)rz_pinHeightTo:(CGFloat)height;
-- (NSLayoutConstraint *)rz_pinTopSpaceToSuperviewWithPadding:(CGFloat)padding;
-- (NSLayoutConstraint *)rz_pinLeftSpaceToSuperviewWithPadding:(CGFloat)padding;
-- (NSLayoutConstraint *)rz_pinBottomSpaceToSuperviewWithPadding:(CGFloat)padding;
-- (NSLayoutConstraint *)rz_pinRightSpaceToSuperviewWithPadding:(CGFloat)padding;
+- (NSLayoutConstraint *)rztv_pinHeightTo:(CGFloat)height;
+- (NSLayoutConstraint *)rztv_pinTopSpaceToSuperviewWithPadding:(CGFloat)padding;
+- (NSLayoutConstraint *)rztv_pinLeftSpaceToSuperviewWithPadding:(CGFloat)padding;
+- (NSLayoutConstraint *)rztv_pinBottomSpaceToSuperviewWithPadding:(CGFloat)padding;
+- (NSLayoutConstraint *)rztv_pinRightSpaceToSuperviewWithPadding:(CGFloat)padding;
 
 @end

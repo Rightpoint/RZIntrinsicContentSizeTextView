@@ -29,6 +29,6 @@
 
 @interface UIView (RZAutoLayoutPriorityHelpers)
 
-- (NSLayoutConstraint *)rz_pinHeightTo:(CGFloat)height priority:(CGFloat)priority;
+- (NSLayoutConstraint *)rztv_pinHeightTo:(CGFloat)height priority:(CGFloat)priority;
 
 @end

@@ -42,8 +42,8 @@ typedef NS_ENUM(NSUInteger, RZViewBorderMask)
 // Adds a generated border image view as the highest z-ordered subview of the target view (above all other views).
 @interface UIView (RZBorders)
 
-- (void)rz_addBordersWithCornerRadius:(CGFloat)radius width:(CGFloat)borderWidth color:(UIColor*)color;
-- (void)rz_addBordersWithMask:(RZViewBorderMask)mask width:(CGFloat)borderWidth color:(UIColor*)color;
-- (void)rz_removeBorders;
+- (void)rztv_addBordersWithCornerRadius:(CGFloat)radius width:(CGFloat)borderWidth color:(UIColor*)color;
+- (void)rztv_addBordersWithMask:(RZViewBorderMask)mask width:(CGFloat)borderWidth color:(UIColor*)color;
+- (void)rztv_removeBorders;
 
 @end

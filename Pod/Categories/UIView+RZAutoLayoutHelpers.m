@@ -31,13 +31,13 @@
 
 # pragma mark - Helpers
 
-- (BOOL)rz_constraintIsWithSuperview:(NSLayoutConstraint *)constraint
+- (BOOL)rztv_constraintIsWithSuperview:(NSLayoutConstraint *)constraint
 {
     return ((constraint.firstItem == self && constraint.secondItem == self.superview) ||
             (constraint.firstItem == self.superview && constraint.secondItem == self));
 }
 
-+ (UIView *)rz_commonAncestorForViews:(NSArray *)views
++ (UIView *)rztv_commonAncestorForViews:(NSArray *)views
 {
     NSParameterAssert([views count] > 0);
 
@@ -85,7 +85,7 @@
 
 # pragma mark - Constraint Accessors
 
-- (NSLayoutConstraint *)rz_pinnedHeightConstraint
+- (NSLayoutConstraint *)rztv_pinnedHeightConstraint
 {
     __block NSLayoutConstraint *constraint = nil;
     [self.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *c, NSUInteger idx, BOOL *stop) {
@@ -101,13 +101,13 @@
     return constraint;
 }
 
-- (NSLayoutConstraint*)rz_pinnedTopConstraint
+- (NSLayoutConstraint*)rztv_pinnedTopConstraint
 {
     if (self.superview == nil) return nil;
 
     __block NSLayoutConstraint *constraint = nil;
     [[[self superview] constraints] enumerateObjectsUsingBlock:^(NSLayoutConstraint *c, NSUInteger idx, BOOL *stop) {
-        if ([self rz_constraintIsWithSuperview:c] &&
+        if ([self rztv_constraintIsWithSuperview:c] &&
             c.firstAttribute == NSLayoutAttributeTop &&
             c.secondAttribute == NSLayoutAttributeTop &&
             c.relation == NSLayoutRelationEqual)
@@ -119,13 +119,13 @@
     return constraint;
 }
 
-- (NSLayoutConstraint*)rz_pinnedLeftConstraint
+- (NSLayoutConstraint*)rztv_pinnedLeftConstraint
 {
     if (self.superview == nil) return nil;
 
     __block NSLayoutConstraint *constraint = nil;
     [[[self superview] constraints] enumerateObjectsUsingBlock:^(NSLayoutConstraint *c, NSUInteger idx, BOOL *stop) {
-        if ([self rz_constraintIsWithSuperview:c] &&
+        if ([self rztv_constraintIsWithSuperview:c] &&
             (c.firstAttribute == NSLayoutAttributeLeft || c.firstAttribute == NSLayoutAttributeLeading) &&
             (c.secondAttribute == NSLayoutAttributeLeft || c.secondAttribute == NSLayoutAttributeLeading) &&
             c.relation == NSLayoutRelationEqual)
@@ -137,13 +137,13 @@
     return constraint;
 }
 
-- (NSLayoutConstraint*)rz_pinnedRightConstraint
+- (NSLayoutConstraint*)rztv_pinnedRightConstraint
 {
     if (self.superview == nil) return nil;
 
     __block NSLayoutConstraint *constraint = nil;
     [[[self superview] constraints] enumerateObjectsUsingBlock:^(NSLayoutConstraint *c, NSUInteger idx, BOOL *stop) {
-        if ([self rz_constraintIsWithSuperview:c] &&
+        if ([self rztv_constraintIsWithSuperview:c] &&
             (c.firstAttribute == NSLayoutAttributeRight  || c.firstAttribute == NSLayoutAttributeTrailing) &&
             (c.secondAttribute == NSLayoutAttributeRight || c.secondAttribute == NSLayoutAttributeTrailing) &&
             c.relation == NSLayoutRelationEqual)
@@ -155,13 +155,13 @@
     return constraint;
 }
 
-- (NSLayoutConstraint*)rz_pinnedBottomConstraint
+- (NSLayoutConstraint*)rztv_pinnedBottomConstraint
 {
     if (self.superview == nil) return nil;
 
     __block NSLayoutConstraint *constraint = nil;
     [[[self superview] constraints] enumerateObjectsUsingBlock:^(NSLayoutConstraint *c, NSUInteger idx, BOOL *stop) {
-        if ([self rz_constraintIsWithSuperview:c] &&
+        if ([self rztv_constraintIsWithSuperview:c] &&
             c.firstAttribute == NSLayoutAttributeBottom &&
             c.secondAttribute == NSLayoutAttributeBottom &&
             c.relation == NSLayoutRelationEqual)
@@ -173,7 +173,7 @@
     return constraint;
 }
 
-- (NSLayoutConstraint *)rz_pinHeightTo:(CGFloat)height
+- (NSLayoutConstraint *)rztv_pinHeightTo:(CGFloat)height
 {
     NSLayoutConstraint *h = [NSLayoutConstraint constraintWithItem:self
                                                          attribute:NSLayoutAttributeHeight
@@ -187,7 +187,7 @@
     return h;
 }
 
-- (NSLayoutConstraint *)rz_pinTopSpaceToSuperviewWithPadding:(CGFloat)padding
+- (NSLayoutConstraint *)rztv_pinTopSpaceToSuperviewWithPadding:(CGFloat)padding
 {
     NSAssert(self.superview != nil, @"Must have superview");
 
@@ -203,7 +203,7 @@
     return c;
 }
 
-- (NSLayoutConstraint *)rz_pinLeftSpaceToSuperviewWithPadding:(CGFloat)padding
+- (NSLayoutConstraint *)rztv_pinLeftSpaceToSuperviewWithPadding:(CGFloat)padding
 {
     NSAssert(self.superview != nil, @"Must have superview");
 
@@ -219,7 +219,7 @@
     return c;
 }
 
-- (NSLayoutConstraint *)rz_pinBottomSpaceToSuperviewWithPadding:(CGFloat)padding
+- (NSLayoutConstraint *)rztv_pinBottomSpaceToSuperviewWithPadding:(CGFloat)padding
 {
     NSAssert(self.superview != nil, @"Must have superview");
 
@@ -235,7 +235,7 @@
     return c;
 }
 
-- (NSLayoutConstraint *)rz_pinRightSpaceToSuperviewWithPadding:(CGFloat)padding
+- (NSLayoutConstraint *)rztv_pinRightSpaceToSuperviewWithPadding:(CGFloat)padding
 {
     NSAssert(self.superview != nil, @"Must have superview");
 
