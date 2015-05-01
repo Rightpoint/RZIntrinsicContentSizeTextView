@@ -168,6 +168,34 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 #pragma mark - Constraint Overrides
 
+- (void)addConstraint:(NSLayoutConstraint *)constraint
+{
+    // only concentrate on height constraints on us
+    if ( constraint.firstAttribute == NSLayoutAttributeHeight && constraint.firstItem == self ) {
+
+        // min constraint relation
+        if ( constraint.relation == NSLayoutRelationGreaterThanOrEqual ) {
+            // only set it if the new constaint consant is greater than the old constarint constant
+            if ( !_rz_minHeightConstraint || constraint.constant > _rz_minHeightConstraint.constant ) {
+                _rz_minHeightConstraint = constraint;
+            }
+        }
+
+        // max constraint relation
+        if ( constraint.relation == NSLayoutRelationLessThanOrEqual ) {
+            // only set it if the new constaint consant is less than the old constarint constant
+            if ( !_rz_maxHeightConstraint || constraint.constant < _rz_maxHeightConstraint.constant ) {
+                _rz_maxHeightConstraint = constraint;
+            }
+        }
+    }
+
+    
+    [super addConstraint:constraint];
+}
+
+// nil out min/max constraints on remove, so we can dynamically them next time
+// we try to access them.
 - (void)removeConstraint:(NSLayoutConstraint *)constraint
 {
     if ( constraint == self.rz_minHeightConstraint ) {
@@ -179,19 +207,6 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     }
 
     [super removeConstraint:constraint];
-}
-
-- (void)removeConstraints:(NSArray *)constraints
-{
-    if ( _rz_minHeightConstraint && [constraints containsObject:self.rz_minHeightConstraint] ) {
-        _rz_minHeightConstraint = nil;
-    }
-
-    if ( _rz_maxHeightConstraint && [constraints containsObject:self.rz_maxHeightConstraint] ) {
-        _rz_maxHeightConstraint = nil;
-    }
-
-    [super removeConstraints:constraints];
 }
 
 #pragma mark - Getters
@@ -287,7 +302,7 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     }
 
     // at the very least we want it the size of the font plus insets
-    CGFloat minimum = self.textContainerInset.top + self.textContainerInset.bottom + self.font.lineHeight;
+    CGFloat minimum = fminf(self.textContainerInset.top + self.textContainerInset.bottom + self.font.lineHeight, self.rz_maxHeightConstraint.constant);
 
     return fmaxf(newHeight, minimum);
 }

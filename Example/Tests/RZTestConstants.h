@@ -31,3 +31,9 @@ OBJC_EXTERN NSString* const kRZShortText;
 OBJC_EXTERN NSString* const kRZLongText;
 OBJC_EXTERN NSString* const kRZNewLineText;
 OBJC_EXTERN NSString* const kRZNewLineLongText;
+
+OBJC_EXTERN const CGFloat kRZNoHeight;
+OBJC_EXTERN const CGFloat kRZMinHeight;
+OBJC_EXTERN const CGFloat kRZMidHeight;
+OBJC_EXTERN const CGFloat kRZMaxHeight;
+

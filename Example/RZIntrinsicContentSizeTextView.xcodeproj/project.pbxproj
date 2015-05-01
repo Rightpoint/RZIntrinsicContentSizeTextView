@@ -23,6 +23,10 @@
 		B4E9E8C2123DF0D204A61922 /* libPods-RZIntrinsicContentSizeTextView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4D4C6FD7FCDE2FB4A14B54 /* libPods-RZIntrinsicContentSizeTextView.a */; };
 		C216C4C71AB7718700C879D4 /* RZTestConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C216C4C61AB7718700C879D4 /* RZTestConstants.m */; };
 		C216C4C91AB7719E00C879D4 /* RZIntrinsicSizeTextViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C216C4C81AB7719E00C879D4 /* RZIntrinsicSizeTextViewTest.m */; };
+		C24D486B1ABC64BD00E0FC17 /* RZIntrinsicContentSizeTextViewUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = C24D486A1ABC64BD00E0FC17 /* RZIntrinsicContentSizeTextViewUITest.m */; };
+		C24D48721ABC669D00E0FC17 /* UIView+RZMinMaxAutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = C24D48711ABC669D00E0FC17 /* UIView+RZMinMaxAutoLayoutHelpers.m */; };
+		C24D48731ABC71ED00E0FC17 /* RZTestConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C216C4C61AB7718700C879D4 /* RZTestConstants.m */; };
+		C24D48741ABC725500E0FC17 /* RZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* RZAppDelegate.m */; };
 		C265C5031AB85DBC0023E446 /* RZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C265C5021AB85DBC0023E446 /* RZViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,9 @@
 		C216C4C51AB7718700C879D4 /* RZTestConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTestConstants.h; sourceTree = "<group>"; };
 		C216C4C61AB7718700C879D4 /* RZTestConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTestConstants.m; sourceTree = "<group>"; };
 		C216C4C81AB7719E00C879D4 /* RZIntrinsicSizeTextViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZIntrinsicSizeTextViewTest.m; sourceTree = "<group>"; };
+		C24D486A1ABC64BD00E0FC17 /* RZIntrinsicContentSizeTextViewUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZIntrinsicContentSizeTextViewUITest.m; sourceTree = "<group>"; };
+		C24D48701ABC669D00E0FC17 /* UIView+RZMinMaxAutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RZMinMaxAutoLayoutHelpers.h"; sourceTree = "<group>"; };
+		C24D48711ABC669D00E0FC17 /* UIView+RZMinMaxAutoLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RZMinMaxAutoLayoutHelpers.m"; sourceTree = "<group>"; };
 		C265C5021AB85DBC0023E446 /* RZViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZViewController.xib; sourceTree = "<group>"; };
 		C2E83AA7F206007B92092A8F /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DF1043CF51A1482CC267E725 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -140,6 +147,8 @@
 				C265C5021AB85DBC0023E446 /* RZViewController.xib */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				C24D48701ABC669D00E0FC17 /* UIView+RZMinMaxAutoLayoutHelpers.h */,
+				C24D48711ABC669D00E0FC17 /* UIView+RZMinMaxAutoLayoutHelpers.m */,
 			);
 			path = RZIntrinsicContentSizeTextView;
 			sourceTree = "<group>";
@@ -159,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				C216C4C81AB7719E00C879D4 /* RZIntrinsicSizeTextViewTest.m */,
+				C24D486A1ABC64BD00E0FC17 /* RZIntrinsicContentSizeTextViewUITest.m */,
 				C216C4C51AB7718700C879D4 /* RZTestConstants.h */,
 				C216C4C61AB7718700C879D4 /* RZTestConstants.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
@@ -362,8 +372,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C24D48731ABC71ED00E0FC17 /* RZTestConstants.m in Sources */,
 				6003F59E195388D20070C39A /* RZAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* RZViewController.m in Sources */,
+				C24D48721ABC669D00E0FC17 /* UIView+RZMinMaxAutoLayoutHelpers.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +386,8 @@
 			files = (
 				C216C4C71AB7718700C879D4 /* RZTestConstants.m in Sources */,
 				C216C4C91AB7719E00C879D4 /* RZIntrinsicSizeTextViewTest.m in Sources */,
+				C24D48741ABC725500E0FC17 /* RZAppDelegate.m in Sources */,
+				C24D486B1ABC64BD00E0FC17 /* RZIntrinsicContentSizeTextViewUITest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

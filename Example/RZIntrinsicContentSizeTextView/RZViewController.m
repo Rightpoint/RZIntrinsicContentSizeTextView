@@ -33,7 +33,7 @@
 
 @interface RZViewController () <RZIntrinsicContentSizeTextViewSizeChangedDelegate>
 
-@property (strong, nonatomic) RZIntrinsicContentSizeTextView *textView;
+@property (strong, nonatomic, readwrite) RZIntrinsicContentSizeTextView *textView;
 
 @property (strong, nonatomic) NSLayoutConstraint *bottomConstraint;
 
@@ -58,6 +58,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.view.backgroundColor = [UIColor lightGrayColor];
 
     // add textview to view
     self.textView =  [[RZIntrinsicContentSizeTextView alloc] initWithFrame:CGRectZero];
