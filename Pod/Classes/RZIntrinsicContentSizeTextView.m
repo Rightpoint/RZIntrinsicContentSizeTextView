@@ -279,17 +279,17 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
     // Consider the min/max height constraints when calculating the height
     if ( self.rz_maxHeightConstraint ) {
-        newHeight = fminf(newHeight, self.rz_maxHeightConstraint.constant);
+        newHeight = fmin(newHeight, self.rz_maxHeightConstraint.constant);
     }
 
     if ( self.rz_minHeightConstraint ) {
-        newHeight = fmaxf(newHeight, self.rz_minHeightConstraint.constant);
+        newHeight = fmax(newHeight, self.rz_minHeightConstraint.constant);
     }
 
     // at the very least we want it the size of the font plus insets
     CGFloat minimum = self.textContainerInset.top + self.textContainerInset.bottom + self.font.lineHeight;
 
-    return fmaxf(newHeight, minimum);
+    return fmax(newHeight, minimum);
 }
 
 #pragma mark - Delegate Helpers
@@ -392,7 +392,7 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 - (CGPoint)bottomOffset
 {
-    return CGPointMake(0.0f, self.contentSize.height - CGRectGetHeight(self.bounds) + fabsf(self.textContainerInset.top - self.textContainerInset.bottom));
+    return CGPointMake(0.0f, self.contentSize.height - CGRectGetHeight(self.bounds) + fabs(self.textContainerInset.top - self.textContainerInset.bottom));
 }
 
 - (void)scrollToBottom
