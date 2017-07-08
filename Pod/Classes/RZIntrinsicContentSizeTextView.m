@@ -257,6 +257,7 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     self.placeholderLabel.text = self.placeholder;
     self.placeholderLabel.attributedText = self.attributedPlaceholder;
     self.placeholderLabel.font = self.font;
+    self.placeholderLabel.numberOfLines = 0;
     [self addSubview:self.placeholderLabel];
 
     // set the constraints, we will update them later
