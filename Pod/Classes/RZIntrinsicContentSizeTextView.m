@@ -36,8 +36,11 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 @interface RZIntrinsicContentSizeTextView ()
 
+@property (assign, nonatomic) BOOL didInitiallyLayoutSubviews;
+
 // Placholder
 @property (strong, nonatomic, readwrite) UILabel *placeholderLabel;
+@property (strong, nonatomic) NSLayoutConstraint *placeholderWidthConstraint;
 
 // Dynamic Min/Max constraints
 @property (weak, nonatomic, readonly) NSLayoutConstraint *rztv_minHeightConstraint;
@@ -119,6 +122,9 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 - (void)layoutSubviews
 {
+    _didInitiallyLayoutSubviews=YES;
+    ////
+    
     [super layoutSubviews];
 
     [self adjustHeightIfNeededAnimated:self.shouldAnimateSizeChange];
@@ -178,7 +184,13 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 {
     [super setText:text];
     [self adjustPlaceholderForTextChange];
-    [self adjustHeightIfNeededAnimated:self.shouldAnimateSizeChange];
+    
+    if (_didInitiallyLayoutSubviews)
+    {
+        [self adjustHeightIfNeededAnimated:self.shouldAnimateSizeChange];
+        
+    }
+    
 }
 
 - (void)setFont:(UIFont *)font
@@ -257,12 +269,16 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
     self.placeholderLabel.text = self.placeholder;
     self.placeholderLabel.attributedText = self.attributedPlaceholder;
     self.placeholderLabel.font = self.font;
+    self.placeholderLabel.numberOfLines = 0;
     [self addSubview:self.placeholderLabel];
 
     // set the constraints, we will update them later
     [self.placeholderLabel rztv_pinLeftSpaceToSuperviewWithPadding:0.0f];
     [self.placeholderLabel rztv_pinTopSpaceToSuperviewWithPadding:0.0f];
 
+    _placeholderWidthConstraint=[NSLayoutConstraint constraintWithItem:_placeholderLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+    [self addConstraint:_placeholderWidthConstraint];
+    
     // this will set the placeholder position to the beginning of the document.
     [self adjustPlaceholderPosition];
 }
@@ -381,6 +397,9 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
         self.placeholderLabel.rztv_pinnedLeftConstraint.constant = CGRectGetMinX(startRect);
         self.placeholderLabel.rztv_pinnedTopConstraint.constant = CGRectGetMinY(startRect);
     }
+    
+    _placeholderWidthConstraint.constant=(-_placeholderLabel.rztv_pinnedLeftConstraint.constant*2)-[self contentInset].left-[self contentInset].right;
+    
 }
 
 #pragma mark - Scroll Helpers
