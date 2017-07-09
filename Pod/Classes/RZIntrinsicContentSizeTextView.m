@@ -36,6 +36,8 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 @interface RZIntrinsicContentSizeTextView ()
 
+@property (assign, nonatomic) BOOL didInitiallyLayoutSubviews;
+
 // Placholder
 @property (strong, nonatomic, readwrite) UILabel *placeholderLabel;
 @property (strong, nonatomic) NSLayoutConstraint *placeholderWidthConstraint;
@@ -120,6 +122,9 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 
 - (void)layoutSubviews
 {
+    _didInitiallyLayoutSubviews=YES;
+    ////
+    
     [super layoutSubviews];
 
     [self adjustHeightIfNeededAnimated:self.shouldAnimateSizeChange];
@@ -179,7 +184,13 @@ static const CGFloat kRZTextViewDefaultHeightPriority = 999.0f;
 {
     [super setText:text];
     [self adjustPlaceholderForTextChange];
-    [self adjustHeightIfNeededAnimated:self.shouldAnimateSizeChange];
+    
+    if (_didInitiallyLayoutSubviews)
+    {
+        [self adjustHeightIfNeededAnimated:self.shouldAnimateSizeChange];
+        
+    }
+    
 }
 
 - (void)setFont:(UIFont *)font
